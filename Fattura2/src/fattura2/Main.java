@@ -39,7 +39,7 @@ public class Main {
         
         f.inserimentoProdotto(new Prodotto());
         f.inserimentoProdotto(new Prodotto());
-        f.inserimentoProdotto(new Prodotto());
+        //f.inserimentoProdotto(new Prodotto());
         
         
         f.stampaFattura();

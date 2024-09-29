@@ -23,7 +23,7 @@ public class Fattura {
     }
     
     
-    void inserimentoProdotto(Prodotto prodottoCorrente){
+    public void inserimentoProdotto(Prodotto prodottoCorrente){
         if(numeroProdottiInseriti == prodVett.length){
             System.err.println("In fattura (id: "+idFattura+") raggiunto massimo numero di prodotti inseriti: "+prodVett.length);
             return;

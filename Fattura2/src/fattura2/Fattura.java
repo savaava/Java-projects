@@ -11,7 +11,6 @@ public class Fattura {
     }
     
     /**
-     * ijbibjiji
      * @param descrizioneFattura
      * @param idFattura 
      */
