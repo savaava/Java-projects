@@ -8,6 +8,10 @@ public class PersonaUnisa extends Persona {
     quando definisco un'estensione devo definire lo stato (nome, cognome, codicefiscale) ->
     ho bisogno di usare un costruttore per inizializzare gli attributi della classe madre persona*/
     
+    public PersonaUnisa() {
+        this("no name", "no surname", "no codice fiscale", "no matricola");
+    } 
+    
     public PersonaUnisa(String nome, String cognome, String codiceFiscale, String matricola) {
         /*devo gestire i parametri di persona come faccio ?*/
         // come quando uso this per riferirmi a un altro costruttore
@@ -27,7 +31,5 @@ public class PersonaUnisa extends Persona {
     public String getMatricola(){
         //super.nome = "ciao"; -> no perchè è privato
         return this.matricola;
-    }
-    
-        
+    }        
 }

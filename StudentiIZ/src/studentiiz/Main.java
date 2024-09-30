@@ -3,27 +3,17 @@ import it.unisa.diem.oop.persone.*;
 
 public class Main {
     public static void main(String[] args) {
-        /*
-        degli studenti voglio tenere traccia di alcune cose (matricola, )
-        dei docenti anche (matricola, corso nome di insegnamento)
-        i tecnici
+        Persona p0 = new Persona("savasio","sava","IFBUIBi43534");
         
-        le varie classi ripetono gli attributi come matricola
-        quindi per una progettazione efficiente posso immaginare che al di sopra di queste
-        entità ce ne sia una che contiene questi elementi comuni -> persona
-        che contiene nome cognome codice fiscale perchè sono comuni a tutte le persone
-        però già la matricola non ce l'hanno le persone, quindin 
-        posso iummaginare già un altro livello dove tutte le persone unisa hanno la matricola
+        PersonaUnisa p1 = new PersonaUnisa();
         
-        classe madre persona
-        persona unisa -> figlia di persone
-        docente studente tecnico -> figlie di persone unisa
-        RELAZIONE TRA CLASSI: ereditarietà
-        quindi persona studente ha TUTTI gli attributi o metodi
-        di persona unisa ma ha anche il voto merdio, ...
-        */
-        Persona p2 = new Persona("savasio","sava","IFBUIBi43534");
-        PersonaUnisa p = new PersonaUnisa("Mario","Rossi","IFBUIBSA","0612707904");
-        System.out.println(p.getNome()+" "+p.getCognome()+" "+p.getMatricola());
+        Studente s1 = new Studente("Andrea", "Savastano", "SVSNDR04B128Q", "0612707904", 29F);
+        System.out.println("Nome: "+s1.getNome());
+        System.out.println("Cognome: "+s1.getCognome());
+        System.out.println("Codice Fiscale: "+s1.getCodiceFiscale());
+        System.out.println("Matricola: "+s1.getMatricola());
+        System.out.println("Voto medio: "+s1.getVotoMedio());
+        
+        
     }    
 }

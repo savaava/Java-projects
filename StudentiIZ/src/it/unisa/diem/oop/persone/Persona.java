@@ -11,13 +11,6 @@ public class Persona {
         this.codiceFiscale = codiceFiscale;
     }   
     
-    /*per ora non arrichiamo la classe con setter e getter
-    questa è la classe madre: 
-    SPECIALIZZAZIONE -> Da classe madre a classe figlie
-    GENERALIZZAZIONE -> Da le classi figlie o sottoclassi a classe madre (al contrario)
-    */
-    
-    /**/
     public String getNome(){
         return this.nome;
     }
