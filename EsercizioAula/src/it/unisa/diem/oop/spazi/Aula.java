@@ -48,38 +48,33 @@ public class Aula {
         StringBuffer str;
         str = new StringBuffer();
         
-        str.append("-Nome: ");
-        str.append(this.studenti[i].getNome());
-        str.append("\n");
-        str.append("-Cognome: ");
-        str.append(this.studenti[i].getCognome());
-        str.append("\n");
-        str.append("-Codice fiscale: ");
-        str.append(this.studenti[i].getCodiceFiscale());
-        str.append("\n");
-        str.append("-Matricola: ");
-        str.append(this.studenti[i].getMatricola());
-        str.append("\n");
-        str.append("-Voto medio: ");
-        str.append(this.studenti[i].getVotoMedio());
+        str = str.append("-Nome: ").append(this.studenti[i].getNome()).append("\n");
+        str = str.append("-Cognome: ").append(this.studenti[i].getCognome()).append("\n");
+        str = str.append("-Codice fiscale: ").append(this.studenti[i].getCodiceFiscale()).append("\n");
+        str = str.append("-Matricola: ").append(this.studenti[i].getMatricola()).append("\n");
+        str = str.append("-Voto medio: ").append(this.studenti[i].getVotoMedio());
         
         return str;
     }
     
-    public void getInfoAula(){
+    public String getInfoAula(){
+        StringBuffer str;
+        str = new StringBuffer();
+        
         if(this.aulaVuota()){
-            System.out.println("L'aula non contiene studenti: "+this.currDim+"/"+this.maxPosti+"\n");
-            return;
+            str = str.append("L'aula non contiene studenti: ").append(this.currDim).append("/");
+            str = str.append(this.maxPosti).append("\n");
+            return str.toString();
         }
         
-        System.out.println("L'aula contiene "+this.currDim+" studenti / "+this.maxPosti+" capienza massima");
-        System.out.println("--------------------------------------");
+        str = str.append("L'aula contiene ").append(this.currDim).append(" studenti / ").append(this.maxPosti).append(" capienza massima");
+        str = str.append("\n--------------------------------------\n");
         for(int i=0;  i<this.currDim;  i++){
-            System.out.println("Studente #"+(i+1)+":");
-            System.out.println(this.formattazioneStampa(i));
-            System.out.println("--------------------------------------");
+            str = str.append("Studente #"+(i+1)+":\n").append(this.formattazioneStampa(i));
+            str = str.append("\n--------------------------------------\n");
         }
-        System.out.println();
+        str = str.append("\n");
+        return str.toString();
     }
 }
 
