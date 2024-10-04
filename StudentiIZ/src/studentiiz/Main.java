@@ -2,9 +2,7 @@ package studentiiz;
 import it.unisa.diem.oop.persone.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Persona p0 = new Persona("savasio","sava","IFBUIBi43534");
-        
+    public static void main(String[] args) {        
         Studente s1 = new Studente("Andrea", "Savastano", "SVSNDR04B128Q", "0612707904", 29F);
         System.out.println("Nome: "+s1.getNome());
         System.out.println("Cognome: "+s1.getCognome());
@@ -42,6 +40,17 @@ public class Main {
             Studente s3 = (Studente) s;
             System.out.println(s3.getVotoMedio());
         }
+        
+        Persona p1[] = new Persona[5];
+        p1[0] = new Persona();
+        p1[1] = new Persona();
+        p1[2] = new Studente();
+        p1[3] = new Studente();
+        p1[4] = new Studente();
+        
+        for(int i=0;  i<p1.length;  i++)
+            System.out.println("descrizione p["+i+"]: "+p1[i]);
+        
         /*
         s.getClass() restituisce un oggetto classe che identifica la classe di s Studente
         è utile quando voglio confrontare due oggetti, anche se si può usare instanceof
@@ -61,8 +70,6 @@ public class Main {
         
         tipo wrapper per convertire i tipi primitivi in classi, come int -> integer
         il vantaggio è che avremo i vari metodi
-        */        
-        
-        
+        */               
     }    
 }

@@ -27,12 +27,7 @@ public class Persona {
         return this.codiceFiscale;
     }
     
-    /*DEVE ESSERE UGUALE, ALTRIMENTI C'è OVERLOADING: */
     @Override
-    /*è raccomandato perchè è un modo di contrassegnare metodi classi metodi o attributi
-    ci sono i processori di annotazioni che fanno controlli di coerenza, serve allo
-    sviluppatore e non alla JVM
-    Serve solo per segnalare ma non dà errore di compilazione */
     public String toString(){
         return "Persona - "+this.nome+" "+this.cognome+" "+this.codiceFiscale;
     }
