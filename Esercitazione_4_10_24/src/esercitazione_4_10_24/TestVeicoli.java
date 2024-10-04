@@ -2,9 +2,7 @@ package esercitazione_4_10_24;
 import it.unisa.diem.oop.veicoli.*;
 
 public class TestVeicoli {
-
     public static void main(String args[]){
-
         Veicolo v;
         System.out.println("Test 1: camion con targa valida");
         v = new Camion("sdf244", "Fiat CX45", "Gasolio", "TT656671", 4);
@@ -35,7 +33,5 @@ public class TestVeicoli {
         v = new Moto("gdt7896", "Suzuki Bandit", "Benzina", "AT5123N", false);
         System.out.println(v);
         System.out.println("Targa valida? " + v.controllaTarga() + "\n\n");
-
     }
-
 }
