@@ -22,5 +22,11 @@ public class Main {
         Integer num = Integer.valueOf(str2);
         System.out.println("valueOf -> "+num);
         System.out.println("compare -> "+Integer.compare(8,3));
+        
+        System.out.println();
+        
+        float x = 5F;
+        x = x*(float)Math.PI;
+        System.out.println(x);
     }
 }
