@@ -12,15 +12,6 @@ public abstract class PersonaUnisa extends Persona {
         this.matricola = matricola;
     }    
     
-    /* una classe astratta può non avere metodi astratti o averne più d'uno
-    
-    il senso di questo metodo 
-    le classi
-    Ilmetodo astratto deve essere ridefinito dalle sottoclassi! Quindi
-    OBBLIGO LE SOTTOCLASSI A RIDEFINIRE questo metodo
-    QUESTO LO DOBBIAMO METTERE PERCHè IN QUESTO MODO OBBLIGHIAMO LE CLASSI DERIVATE (CONCRETE) A METTERLO
-    E INOLTRE devono avere lo stesso nome, invece non mettere public abstract String getRuolo(); significa
-    lasciare un'opzione alla sottoclasse di chiamarlo o meno e con che nome*/
     public abstract String getRuolo();
     
     public String getMatricola(){
