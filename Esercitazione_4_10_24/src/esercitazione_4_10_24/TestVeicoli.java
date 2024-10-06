@@ -3,6 +3,9 @@ import it.unisa.diem.oop.veicoli.*;
 
 public class TestVeicoli {
     public static void main(String args[]){
+        int x = -5;
+        assert x > 0 : "\n\nx deve essere maggiore di 0, ma è "+x+"\n";
+        
         Veicolo v;
         System.out.println("Test 1: camion con targa valida");
         v = new Camion("sdf244", "Fiat CX45", "Gasolio", "TT656671", 4);
