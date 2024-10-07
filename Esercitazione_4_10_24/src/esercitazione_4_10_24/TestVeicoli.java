@@ -3,7 +3,7 @@ import it.unisa.diem.oop.veicoli.*;
 
 public class TestVeicoli {
     public static void main(String args[]){
-        int x = -5;
+        int x = 5;
         assert x > 0 : "\n\nx deve essere maggiore di 0, ma è "+x+"\n";
         
         Veicolo v;

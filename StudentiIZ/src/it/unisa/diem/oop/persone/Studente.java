@@ -9,7 +9,16 @@ public class Studente extends PersonaUnisa {
     
     public Studente(String nome, String cognome, String codiceFiscale, String matricola, float votoMedio){
         super(nome, cognome, codiceFiscale, matricola);
-        /*in java la sotto classe ha un'unica classe super sempre*/
+        /* non accetto un voto medio < 18 : eccezione!!*/
+        if(votoMedio<18){
+            /* lancio un eccezione perchè 
+            runtime perchè rientrano nelle eccezioni non controllate
+            lanciare runtime -> arresta in maniera crititca e non vanno gestite
+            perchè è un'impedizia del programmatore 
+            Di solito le eccezioni di runtime non vanno sollevate, perchè significa
+            che è il coder che non è buon*/
+            throw new RuntimeException("Voto medio non consentito");
+        }
         this.votoMedio = votoMedio; 
     }
     
