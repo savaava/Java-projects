@@ -3,12 +3,13 @@ import figureconcrete.*;
 
 public class TestFigure {
     public static void main(String[] args) {
-        Cerchio c1 = new Cerchio();
-        Cerchio c2 = new Cerchio("c2 :) ", 7F);        
-        System.out.println(c1);
-        System.out.println("Perimetro c1: "+c1.calcolaPerimetro()+"\nArea c1: "+c1.calcolaArea()+"\n");
-        System.out.println(c2);
-        System.out.println("Perimetro c2: "+c2.calcolaPerimetro()+"\nArea c2: "+c2.calcolaArea()+"\n");
+        Figura2D foglio[] = new Figura2D[2];
+        foglio[0] = new Cerchio();
+        foglio[1] = new Cerchio("cerchietto 2", 2.2F);
+        System.out.println(foglio[0]);
+        System.out.println("Perimetro foglio[0]: "+foglio[0].calcolaPerimetro()+"\nArea foglio[0]: "+foglio[0].calcolaArea()+"\n");
+        System.out.println(foglio[1]);
+        System.out.println("Perimetro foglio[1]: "+foglio[1].calcolaPerimetro()+"\nArea foglio[1]: "+foglio[1].calcolaArea()+"\n");
         
         Sfera s1 = new Sfera();
         Sfera s2 = new Sfera("s1 :)) ", 7F);

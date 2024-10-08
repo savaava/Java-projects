@@ -3,14 +3,6 @@ package it.unisa.diem.oop.spazi;
 public abstract class Spazio implements Accessibile {
     private String nome;
     private int maxPosti;
-    /*
-    Per poter implementare -> deve essere astratto e deve ridefinire i metodi
-    Spazio adesso essendo asttratta può non ridefinire i metodi,
-    lo faranno direttamente le aule concrete
-    è una proprietà dell'aula maxPosti
-    
-    facciamo il costruttore perchè 
-    */
     
     public Spazio(String nome, int maxPosti) {
         this.nome = nome;
