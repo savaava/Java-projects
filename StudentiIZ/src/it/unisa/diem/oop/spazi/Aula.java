@@ -24,11 +24,15 @@ public class Aula extends Spazio {
     }
     
     @Override
-    public void entra(Persona p){
+    /*qui sono preciso e uso AulaPienaExc*/
+    public void entra(Persona p) throws AulaPienaException {
+        /*POSSIAMO gestire con un'eccezione controllata:
+        step 1) definiamo una eccezione contollata*/
         if(this.aulaPiena()){
-            System.err.println("Non è possibile eseguire il metodo entra: ");
-            System.err.println("L'aula ha raggiunto la capienza massima di persone: "+this.riemp+"/"+persone.length);
-            return;
+            throw new AulaPienaException("Aula piena! ");
+            /*la super classe Accessibile 
+            quello che sta sotto è irrangiungibile perchè vado a finire nel 
+            catch !*/
         }
         
         System.out.println("Entra studente #"+(this.riemp+1)+"...\n");
@@ -36,17 +40,10 @@ public class Aula extends Spazio {
     }
     
     @Override
-    public Persona esce(){
+    public Persona esce() throws AulaVuotaException {
         if(this.aulaVuota()){
-            System.err.println("Non è possibile eseguire il metodo esce: ");
-            System.err.println("L'aula non contiene persone: "+this.riemp+"/"+persone.length);
-            return null;
+            throw new AulaVuotaException("Aula vuota !");
         }
-        
-        /* riemp--;
-        return this.persone[this.riemp];
-        adeso però non è stato eliminato solo il riferimento e può essere solo sovrascritto 
-        per migliorare si deve annullare il riferimento e si fa con una variabile d'appoiggio*/
         
         System.out.println("Esce studente #"+(this.riemp)+"...\n");
         Persona p = persone[--riemp];

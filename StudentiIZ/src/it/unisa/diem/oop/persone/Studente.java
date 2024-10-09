@@ -11,7 +11,16 @@ public class Studente extends PersonaUnisa {
         super(nome, cognome, codiceFiscale, matricola);
         /* non accetto un voto medio < 18 : eccezione!!*/
         if(votoMedio<18){
-            throw new RuntimeException("Voto medio non consentito");
+            /*deve essere non controllata NullPointerException OutOfBoundException
+            quindi è meglio chiamare la classe dell'eccezione col nome del problema
+            che si è verificato:*/
+            throw new VotoNonConsentitoException("Voto medio non consentito");
+            //throw new Exception("Voto medio non consentito");
+            /*non me lo fa fare perchè bisogna gestirla*/
+            /*
+            La classe deve ereditare Exception o RuntimeException
+            fine delle eccezioni non controllate
+            */
         }
         this.votoMedio = votoMedio; 
     }
