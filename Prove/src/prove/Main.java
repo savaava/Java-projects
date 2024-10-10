@@ -1,8 +1,13 @@
 package prove;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import newpackage.AccessibileDueException;
+import newpackage.AccessibileUnoException;
+import newpackage.Coordinate2D;
 
 public class Main {
-    public static void main(String[] args) {
-        String str = "Aa 77";
+    public static void main(String[] args) throws AccessibileUnoException {
+        /*String str = "Aa 77";
 	char c;
 	for(int i=0;  i<str.length();  i++) {
             c = str.charAt(i);
@@ -28,5 +33,32 @@ public class Main {
         float x = 5F;
         x = x*(float)Math.PI;
         System.out.println(x);
+        */
+        
+        
+        Coordinate2D coord1 = new Coordinate2D(2.5f,2.4f);
+        try {
+            System.out.println(coord1.DistanzaDalCentro());
+            System.out.println("Tutto a posto coord1.DistanzaDalCentro() non ha sollevato l'eccezione controllata");
+        } catch (AccessibileUnoException ex) {
+            System.out.println("coord1.DistanzaDalCentro() HA sollevato l'eccezione controllata");
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            System.out.println("fine blocco");
+        }
+                
+        Coordinate2D coord2 = new Coordinate2D();
+        try {
+            System.out.println(coord2.DistanzaDalCentro());
+            System.out.println("Tutto a posto coord2.DistanzaDalCentro() non ha sollevato l'eccezione controllata");
+        } catch (AccessibileUnoException ex) {
+            System.out.println("coord2.DistanzaDalCentro() HA sollevato l'eccezione controllata");
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            System.out.println("fine blocco");
+        }
+        
+        Coordinate2D coord3 = new Coordinate2D();
+        coord3.DistanzaDalCentro();
     }
 }

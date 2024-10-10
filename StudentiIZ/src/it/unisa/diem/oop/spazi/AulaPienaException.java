@@ -12,20 +12,7 @@ package it.unisa.diem.oop.spazi;
 
 /*posso specializzare ulteriormente l'eccezione*/
 public class AulaPienaException extends AccessibileException {
-
-    /**
-     * Creates a new instance of <code>AulaPienaException</code> without detail
-     * message.
-     */
-    public AulaPienaException() {
-    }
-
-    /**
-     * Constructs an instance of <code>AulaPienaException</code> with the
-     * specified detail message.
-     *
-     * @param msg the detail message.
-     */
+    public AulaPienaException() {}
     public AulaPienaException(String msg) {
         super(msg);
     }

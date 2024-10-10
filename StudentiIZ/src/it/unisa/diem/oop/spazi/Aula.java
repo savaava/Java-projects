@@ -25,9 +25,7 @@ public class Aula extends Spazio {
     
     @Override
     /*qui sono preciso e uso AulaPienaExc*/
-    public void entra(Persona p) throws AulaPienaException {
-        /*POSSIAMO gestire con un'eccezione controllata:
-        step 1) definiamo una eccezione contollata*/
+    public void entra(Persona p) throws AccessibileException {
         if(this.aulaPiena()){
             throw new AulaPienaException("Aula piena! ");
             /*la super classe Accessibile 
@@ -41,9 +39,7 @@ public class Aula extends Spazio {
     
     @Override
     public Persona esce() throws AulaVuotaException {
-        if(this.aulaVuota()){
-            throw new AulaVuotaException("Aula vuota !");
-        }
+        if(this.aulaVuota()) throw new AulaVuotaException("Aula vuota !"); 
         
         System.out.println("Esce studente #"+(this.riemp)+"...\n");
         Persona p = persone[--riemp];

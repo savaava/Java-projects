@@ -12,20 +12,7 @@ package it.unisa.diem.oop.spazi;
 
 /*la seconda sottoclasse di accessEx */
 public class AulaVuotaException extends AccessibileException {
-
-    /**
-     * Creates a new instance of <code>AulaVuotaException</code> without detail
-     * message.
-     */
-    public AulaVuotaException() {
-    }
-
-    /**
-     * Constructs an instance of <code>AulaVuotaException</code> with the
-     * specified detail message.
-     *
-     * @param msg the detail message.
-     */
+    public AulaVuotaException() {}
     public AulaVuotaException(String msg) {
         super(msg);
     }
