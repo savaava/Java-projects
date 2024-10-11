@@ -39,6 +39,10 @@ public class MainAula {
             Logger.getLogger(MainAula.class.getName()).log(Level.SEVERE, null, ex);
         } finally { /*il try catch può continuare con questo*/
             System.out.println("finally ");
-        }        
+        }
+
+        /*
+        nel finally forziamo le istruzioni di chiudere le connessioni coi server aperte nel try
+        */
     }
 }

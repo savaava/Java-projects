@@ -1,4 +1,4 @@
-package esercitazione_4_10_24;
+package it.unisa.diem.oop.veicoli;
 import it.unisa.diem.oop.veicoli.*;
 
 public class TestVeicoli {
