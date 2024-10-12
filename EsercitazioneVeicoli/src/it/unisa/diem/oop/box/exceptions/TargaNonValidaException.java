@@ -1,4 +1,4 @@
-package it.unisa.diem.oop.box;
+package it.unisa.diem.oop.box.exceptions;
 
 import it.unisa.diem.oop.box.exceptions.BoxException;
 

@@ -1,4 +1,4 @@
-package it.unisa.diem.oop.spazi;
+package it.unisa.diem.oop.spazi.exceptions;
 
 /* ECCEZIONE CONTROLLATA --> estendiamo Exception */
 public class AccessibileException extends Exception {

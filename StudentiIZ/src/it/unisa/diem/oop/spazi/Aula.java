@@ -1,4 +1,6 @@
 package it.unisa.diem.oop.spazi;
+import it.unisa.diem.oop.spazi.exceptions.AulaVuotaException;
+import it.unisa.diem.oop.spazi.exceptions.AulaPienaException;
 import it.unisa.diem.oop.persone.*;
 
 public class Aula extends Spazio {
@@ -6,7 +8,7 @@ public class Aula extends Spazio {
     private int riemp;
     
     public Aula(){
-        this("Nessun nome", 50);
+        this("Nessun nome dell'Aula ", 50);
     }
     
     public Aula(String nome, int maxPosti) {
@@ -25,9 +27,9 @@ public class Aula extends Spazio {
     
     @Override
     /*qui sono preciso e uso AulaPienaExc*/
-    public void entra(Persona p) throws AccessibileException {
+    public void entra(Persona p) throws AulaPienaException {
         if(this.aulaPiena()){
-            throw new AulaPienaException("Aula piena! ");
+            throw new AulaPienaException("Aula piena! NON PUO' ENTRARE NESSUNO\n");
             /*la super classe Accessibile 
             quello che sta sotto è irrangiungibile perchè vado a finire nel 
             catch !*/
@@ -39,7 +41,7 @@ public class Aula extends Spazio {
     
     @Override
     public Persona esce() throws AulaVuotaException {
-        if(this.aulaVuota()) throw new AulaVuotaException("Aula vuota !"); 
+        if(this.aulaVuota()) throw new AulaVuotaException("Aula vuota! NON PUO' USCIRE NESSUNO\n"); 
         
         System.out.println("Esce studente #"+(this.riemp)+"...\n");
         Persona p = persone[--riemp];
