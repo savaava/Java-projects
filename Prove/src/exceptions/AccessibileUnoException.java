@@ -1,4 +1,4 @@
-package newpackage;
+package exceptions;
 
 public class AccessibileUnoException extends Exception {
     public AccessibileUnoException() {}

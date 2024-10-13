@@ -1,7 +1,9 @@
 package newpackage;
 
+import exceptions.AccessibileUnoException;
+
 public class Coordinate2D implements Accessibile {
-    private final float x;
+    float x;
     private final float y;
     
     public Coordinate2D(){

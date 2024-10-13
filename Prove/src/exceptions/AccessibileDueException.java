@@ -1,4 +1,4 @@
-package newpackage;
+package exceptions;
 
 public class AccessibileDueException extends Exception {
     public AccessibileDueException() {}
