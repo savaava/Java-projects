@@ -33,6 +33,6 @@ public class MainAula {
         } finally {
             /*nel finally forziamo le istruzioni di chiudere le connessioni coi server aperte nel try*/
             System.out.println("finallyyyyy");
-        }
+        }        
     }
 }
