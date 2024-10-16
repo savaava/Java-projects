@@ -1,9 +1,10 @@
 package it.unisa.diem.oop.persone;
 
-public class Persona implements Clonabile<Persona> {
+public class Persona implements Clonabile<Persona>, Comparable<Persona> {
     private String nome;
     private String cognome;
     private String codiceFiscale;
+    private int età;
     
     public Persona(){
         this("no name", "no surname", "no codice fiscale");
@@ -27,6 +28,13 @@ public class Persona implements Clonabile<Persona> {
         return this.codiceFiscale;
     }
     
+    public void setEta(int età){
+        this.età = età;
+    }
+    public int getEta(){
+        return this.età;
+    }
+    
     @Override
     public String toString(){
         return "Persona - "+this.nome+" "+this.cognome+" "+this.codiceFiscale;
@@ -36,8 +44,8 @@ public class Persona implements Clonabile<Persona> {
     public boolean equals(Object obj){
         if(obj == null) return false;
         if(this == obj) return true;
-        //if(this.getClass() != obj.getClass()) return false; //proprietà simmetrica x=y -> y=x
-        if(!(obj instanceof Persona)) return false;
+        if(this.getClass() != obj.getClass()) return false; //proprietà simmetrica x=y -> y=x
+        //if(!(obj instanceof Persona)) return false;
         
         Persona p = (Persona)obj;
         return p.codiceFiscale.equals(this.codiceFiscale);
@@ -49,5 +57,54 @@ public class Persona implements Clonabile<Persona> {
     @Override
     public Persona clona() { /*nell'override ci metto il tipo Persona specifico della seguente classe*/
         return new Persona(this.nome, this.cognome, this.codiceFiscale);
+    }
+    
+    @Override //caso specifico con un singolo attributo
+    public int hashCode(){
+        /*questo già mi garantisce che persone studenti con lo stesso cf finiscono nello stesso
+        bucket, ossia hanno stesso hashcode*/
+        
+        return this.codiceFiscale.hashCode();
+        
+        /*però ci potrebbe essere un problema: se volessi considerare più attributi per 
+        identificare univocamente il mio oggetto allora devo combinare gli hashcode dei
+        vari attributi per avere un unico: alcune strategie*/        
+    }
+    
+    
+//    @Override //caso generale con più attributi
+//    public int hashCode(){
+//        int hash = 7;
+//        hash = 79 * hash + this.nome.hashCode();
+//        hash = 79 * hash + this.cognome.hashCode();
+//        hash = 79 * hash + this.codiceFiscale.hashCode();
+//        return hash;
+//        /*hash=7 e 79 numeri primo per ottimizzare il fatto di avere una lista con poche collisioni 
+//        hash. l'ultimo valore hash ha tutti i contributi degli attributi. per il caso di persona
+//        non ci serve perchè appunto l'uguaglianza di due elementi dipende da solo un attributo
+//          è quindi un'implementazione che mi permette di avere elementi distribuiti nei vari
+//                  bucket*/
+//    }
+    
+    @Override
+    public int compareTo(Persona o){
+        /*anche questo metodo sfrutta equals, perchè se le due persone sono uguali allora restituisce 0
+        potrebbe esserci la situazione: equals dipende da CF e comapreTo dipende dall'età quindi c'è
+        incoerenza -> devo far in modo che valutano gli stessi attributi entrambi i metodi */
+        //return this.codiceFiscale.compareTo(o.codiceFiscale);
+        /*il compare to della stringa si basa SOLO SUL CODICE FISCALE, la compareTo deve
+        essere compatibile con equals (che adesso non viene utilizzato)
+        per mantenre lo stesso comportamento dell' hashSet allora dobbiamo scrivere
+        codice simile a equals-> se i CF sono uguali allora verifico se le classi 
+        sono diverse tra loro */
+        
+//        if(! this.cognome.equals(o.cognome))
+//            return this.cognome.compareTo(o.cognome);
+        return this.codiceFiscale.compareTo(o.codiceFiscale);
+        
+        /*se ho un'attributo numerico potrei fare una differenza se si tratta di interi,
+        invece per numeri decimali -> usiamo le classi wrapper*/
+        
+        /**/
     }
 }
