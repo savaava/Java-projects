@@ -20,4 +20,9 @@ public class Coordinate2D implements Accessibile {
         if(x<1 || y<1) throw new AccessibileUnoException("CIAO SONO L'ECCEZIONE");
         return (float)Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
     }
+    
+    @Override
+    public String toString(){
+        return "x: "+this.x+"\ny: "+this.y+"\n";
+    }
 }

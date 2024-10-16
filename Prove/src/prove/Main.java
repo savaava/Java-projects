@@ -58,5 +58,10 @@ public class Main {
         } catch (AccessibileUnoException ex) {
             System.out.println(ex.getMessage());
         }
+        
+        System.out.println(coord1);
+        System.out.println(coord2);
+        System.out.println(coord3);
+        System.out.println(coord2.equals(coord3));
     }
 }

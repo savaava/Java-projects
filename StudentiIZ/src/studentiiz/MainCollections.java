@@ -12,39 +12,13 @@ public class MainCollections {
         Persona p1 = new Persona("Mario", "Rossi", "MRS0001");
         Studente s = new Studente("Stefano", "Grigi", "MRS0001", "0612893", 29F);
         
-        /* 14_10
-        Collezioni 
+        boolean test;
         
-        coll che non ammettono tutti i dati, e quindi devo confrontare gli oggetti
-        con instanceof
+        test = p.equals(p1);
+        System.out.println(test);
         
-        come faccio a vedere se due oggetti sono uguali ? Non mi conviene confrontare
-        i riferimenti, perchè possono avere semplicmente riferimenti diversi
-        
-        metodo equals da Object per confrontare 2 oggetti
-        usarlo significa mettere un oggetto Object che è quanto più generico possibile
-        
-        Noi ereditiamo un'implementazione da Object come toString e possiamo ridefinirla
-        ctrl+equals
-        riflessivo -> x=b -> b=x
-        consistente -> invocazioni multiple generano stesso risultato
-        ingresso a null -> sempre FALSE
-        SI DEVONO RISPETTARE TUTTE LE DIRETtIVE
-        confronta i riferimenti SE EREDITIAMO L'IMPLEMENTAZIONE ORIGINALE, QUINDI
-        */
-        
-        boolean test1;
-        
-        test1 = p.equals(p1);
-        System.out.println(test1);
-        
-        /*la proprietà simmetrica: se diamo allo studente lo stesso codice fiscale a s restituisce true 
-        perchè non fanno parte di classe uguali, quindi if(this.getClass() != obj.getClass()) return false;
-        Collezioni non ammettono duplicati -> io faccio entrare p ed s che hanno lo stesso codice fiscale 
-        e in realtà non sono uguali, come faccio a mettere in discussione la proprietà simmetrica ?*/
-        
-        test1 = p.equals(s);
-        System.out.println(test1);
+        test = p.equals(s);
+        System.out.println(test);
         
         /*
         come faccio a replicare un oggetto -> posso fare un interfaccia "clonabile" che mi serve per
@@ -52,8 +26,8 @@ public class MainCollections {
         */
         
         Persona p2 = p1.clona();
-        test1 = p1.equals(p2);
-        System.out.println(test1); 
+        test = p1.equals(p2);
+        System.out.println(test); 
         
         /*
         Ora possiamo parlare di collezioni

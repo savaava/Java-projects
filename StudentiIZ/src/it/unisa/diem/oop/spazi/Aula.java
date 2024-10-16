@@ -28,12 +28,7 @@ public class Aula extends Spazio {
     @Override
     /*qui sono preciso e uso AulaPienaExc*/
     public void entra(Persona p) throws AulaPienaException {
-        if(this.aulaPiena()){
-            throw new AulaPienaException("Aula piena! NON PUO' ENTRARE NESSUNO\n");
-            /*la super classe Accessibile 
-            quello che sta sotto è irrangiungibile perchè vado a finire nel 
-            catch !*/
-        }
+        if(this.aulaPiena()) throw new AulaPienaException("Aula piena! NON PUO' ENTRARE NESSUNO\n");
         
         System.out.println("Entra studente #"+(this.riemp+1)+"...\n");
         this.persone[this.riemp++] = p;
