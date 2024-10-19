@@ -123,5 +123,30 @@ public class MainCollections {
         persone4.add(p);
         persone4.add(p1);
         System.out.println("\n\n"+persone4);
+        
+        
+        
+        /*
+        aspetto teorico 10 - 12 minuti -> 8 domande 4 sezioni -> 
+        1 modello OOP - fondamenti java, 2 ereditarietà 3 eccezioni, 4 collezioni
+        per ogni sezione 2 domande: 1 con un piccolo frammento di codice e 1 teorica
+        
+        parte pratica vpl activity 45 minuti
+        
+        H,I,M,E -> 55 minuti alla fine non è tanto 
+        
+        
+        
+        E' possibile usare il forEach anche per gli array:
+        
+        per definizione il forEach per gli array si scorre tutti i posti dell'array, attraversanzo
+        tutte le posizioni andando a visitare potenzialmente un elemento non inizializzato, a differenza delle
+        collezioni che invece il foreach si prende solo gli elementi esistenti
+        */
+        //String riciclabili[] = new Strin[5]; -> 2 posizioni non inizializzate ad esempio
+        String riciclabili[] = {"vetro","carta","cotone"};
+        for(){
+            
+        }
     }
 }
