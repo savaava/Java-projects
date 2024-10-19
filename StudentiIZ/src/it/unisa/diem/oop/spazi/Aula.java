@@ -26,7 +26,6 @@ public class Aula extends Spazio {
     }
     
     @Override
-    /*qui sono preciso e uso AulaPienaExc*/
     public void entra(Persona p) throws AulaPienaException {
         if(this.aulaPiena()) throw new AulaPienaException("Aula piena! NON PUO' ENTRARE NESSUNO\n");
         

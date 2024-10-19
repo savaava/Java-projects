@@ -55,35 +55,23 @@ public class Persona implements Clonabile<Persona>, Comparable<Persona> {
     }
 
     @Override
-    public Persona clona() { /*nell'override ci metto il tipo Persona specifico della seguente classe*/
+    public Persona clona() {
         return new Persona(this.nome, this.cognome, this.codiceFiscale);
     }
     
-    @Override //caso specifico con un singolo attributo
+    @Override
     public int hashCode(){
-        /*questo già mi garantisce che persone studenti con lo stesso cf finiscono nello stesso
-        bucket, ossia hanno stesso hashcode*/
-        
-        return this.codiceFiscale.hashCode();
-        
-        /*però ci potrebbe essere un problema: se volessi considerare più attributi per 
-        identificare univocamente il mio oggetto allora devo combinare gli hashcode dei
-        vari attributi per avere un unico: alcune strategie*/        
+        return this.codiceFiscale.hashCode();       
     }
     
     
-//    @Override //caso generale con più attributi
+//    @Override
 //    public int hashCode(){
 //        int hash = 7;
 //        hash = 79 * hash + this.nome.hashCode();
 //        hash = 79 * hash + this.cognome.hashCode();
 //        hash = 79 * hash + this.codiceFiscale.hashCode();
 //        return hash;
-//        /*hash=7 e 79 numeri primo per ottimizzare il fatto di avere una lista con poche collisioni 
-//        hash. l'ultimo valore hash ha tutti i contributi degli attributi. per il caso di persona
-//        non ci serve perchè appunto l'uguaglianza di due elementi dipende da solo un attributo
-//          è quindi un'implementazione che mi permette di avere elementi distribuiti nei vari
-//                  bucket*/
 //    }
     
     @Override
@@ -104,7 +92,5 @@ public class Persona implements Clonabile<Persona>, Comparable<Persona> {
         
         /*se ho un'attributo numerico potrei fare una differenza se si tratta di interi,
         invece per numeri decimali -> usiamo le classi wrapper*/
-        
-        /**/
     }
 }

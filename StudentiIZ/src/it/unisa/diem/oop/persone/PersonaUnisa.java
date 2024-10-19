@@ -20,6 +20,6 @@ public abstract class PersonaUnisa extends Persona {
     
     @Override
     public String toString(){
-        return this.getRuolo()+" -> "+super.toString()+this.matricola;
+        return this.getRuolo()+" -> "+super.toString()+" "+this.matricola;
     }
 }
