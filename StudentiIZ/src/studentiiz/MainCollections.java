@@ -145,8 +145,8 @@ public class MainCollections {
         */
         //String riciclabili[] = new Strin[5]; -> 2 posizioni non inizializzate ad esempio
         String riciclabili[] = {"vetro","carta","cotone"};
-        for(){
-            
-        }
+//        for(){
+//            
+//        }
     }
 }
