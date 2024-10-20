@@ -1,4 +1,4 @@
-package newpackage;
+package classi;
 
 public class ClasseProva {
     public void method(){

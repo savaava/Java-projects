@@ -1,5 +1,6 @@
-package newpackage;
+package classi;
 
+import interfacce.Accessibile;
 import exceptions.AccessibileUnoException;
 
 public class Coordinate2D implements Accessibile {

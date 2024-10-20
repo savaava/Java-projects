@@ -1,4 +1,4 @@
-package newpackage;
+package interfacce;
 
 import exceptions.AccessibileUnoException;
 
