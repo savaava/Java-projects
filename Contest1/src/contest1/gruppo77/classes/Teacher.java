@@ -16,6 +16,6 @@ public class Teacher extends Person {
     
     @Override
     public String toString() {
-        return super.toString()+"\nType = "+this.type;
+        return super.toString()+"Type = "+this.type+"\n";
     }
 }

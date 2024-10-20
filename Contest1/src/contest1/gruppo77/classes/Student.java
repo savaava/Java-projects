@@ -14,6 +14,6 @@ public class Student extends Person {
     
     @Override
     public String toString(){
-        return super.toString()+"\nMatricola = "+this.matricola;
+        return super.toString()+"Matricola = "+this.matricola+"\n";
     }
 }

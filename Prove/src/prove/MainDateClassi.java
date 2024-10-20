@@ -2,7 +2,7 @@ package prove;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class DateClassi {
+public class MainDateClassi {
     public static void main(String[] args) {
         
         LocalDate data1 = LocalDate.of(2004, 2, 12);

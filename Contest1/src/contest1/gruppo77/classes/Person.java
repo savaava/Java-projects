@@ -25,15 +25,16 @@ public class Person implements Comparable<Person> {
     /* final perchè non voglio che il metodo venga ridefinito nelle classi derivate */
     @Override
     public final int compareTo(Person p) {
-        if(this.birthDate.getYear() != p.birthDate.getYear())
-            return p.birthDate.getYear() - this.birthDate.getYear();
-        if(this.birthDate.getMonth() != p.birthDate.getMonth())
-            return p.birthDate.getMonth().getValue() - this.birthDate.getMonth().getValue();
-        return p.birthDate.getDayOfMonth() - this.birthDate.getDayOfMonth();
+        return p.birthDate.compareTo(this.birthDate);
+//        if(this.birthDate.getYear() != p.birthDate.getYear())
+//            return p.birthDate.getYear() - this.birthDate.getYear();
+//        if(this.birthDate.getMonth() != p.birthDate.getMonth())
+//            return p.birthDate.getMonth().getValue() - this.birthDate.getMonth().getValue();
+//        return p.birthDate.getDayOfMonth() - this.birthDate.getDayOfMonth();
     }
     
     @Override
     public String toString() {
-        return "\n\nName = "+this.name+"\nSurname = "+this.surname+"\nBirth date = "+this.birthDate.toString();
+        return "Name = "+this.name+"\nSurname = "+this.surname+"\nBirth date = "+this.birthDate.toString()+"\n";
     }
 }

@@ -43,9 +43,9 @@ public class Department extends LinkedList<Person> implements Sortable, Filterab
     
     @Override
     public String toString() {
-        StringBuffer strb = new StringBuffer("Persone nel department:");
+        StringBuffer strb = new StringBuffer("Persone nel department:\n");
         for(Person pi : this){
-            strb.append(pi);
+            strb.append(pi).append("\n");
         }        
         return strb.toString();
     }
