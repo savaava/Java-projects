@@ -130,6 +130,9 @@ public class MainCollections {
         aspetto teorico 10 - 12 minuti -> 8 domande 4 sezioni -> 
         1 modello OOP - fondamenti java, 2 ereditarietà 3 eccezioni, 4 collezioni
         per ogni sezione 2 domande: 1 con un piccolo frammento di codice e 1 teorica
+        4 possibili risposte per ogni domanda (solo nelle simulazioni ci sono più risposte)
+        simulazione -> 1 o più risposte esatte
+        esame -> 1 sola risposta esatta
         
         parte pratica vpl activity 45 minuti
         
@@ -145,8 +148,16 @@ public class MainCollections {
         */
         //String riciclabili[] = new Strin[5]; -> 2 posizioni non inizializzate ad esempio
         String riciclabili[] = {"vetro","carta","cotone"};
-//        for(){
-//            
-//        }
+
+
+        /*
+        Attributi inizializzati in linea, attributi statici. se non lo inizializziamo si imposta a 0/null
+        inizializzatore statico = blocchetto{} con la parola static (simile al costruttore) e inizializza
+        l'attributo, è l'equivalente del costruttore ma per lo spazio statico
+
+        interfacce viste sono nella modalità iniziale -> rispettano quel contratto implicitamente public
+        e astratti. da java 8 c'è un cambiamento: ci possono essere dei metodi di default e dei metodi statici
+        ad esempio per Math ci possono essere dei metodi statici, non possono essere ereditate dalle 
+        sottointerfacce le sottointerfacce ereditano tutti i metodi TRANNE I METODI STATICI */
     }
 }
