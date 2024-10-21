@@ -1,10 +1,7 @@
 package simulazioneflotta;
 
-
-
 import java.util.Set;
 import java.util.HashSet;
-
 
 public class Fleet {
     
@@ -17,32 +14,26 @@ public class Fleet {
     }
     
     public void add(Truck o) {
-        this.flotta.add(o);
+        this.flotta.add(o);        
     }
     
     public Fleet filterFoodGrade() {
         Fleet flottaNuova = new Fleet(this.name);
+        Tanker tmpTi;
         
         for(Truck ti : this.flotta){
-            if(ti.getClass() == Tanker){
-                ti = (Tanker)ti;
-                if(ti.isFoodGrade())
-                    flottaNuova.add(ti);
-            }
-            
-            
-        }
-        
+            if(ti instanceof Tanker){ /* vero solo quando ti è Tanker quindi è corretto */
+                tmpTi = (Tanker)ti;
+                if(tmpTi.isFoodGrade())
+                    flottaNuova.add(tmpTi);
+            }           
+        }        
         return flottaNuova;
     }
 
     @Override
     public String toString() {
-       StringBuffer strb = new StringBuffer("myFleet contains: \n");
-       for(Truck ti : this.flotta){
-            strb.append(ti.toString()).append("\n");
-        }
-        return strb.toString();
+        return this.flotta.toString();
     }
 }
 

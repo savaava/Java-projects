@@ -33,7 +33,7 @@ public class Truck {
         return false;
        if(this == obj)
         return true;
-       if(! (obj instanceof Truck))
+       if(!(obj instanceof Truck))
         return false;
     
        Truck tmp = (Truck)obj;
@@ -42,7 +42,7 @@ public class Truck {
 
     @Override
     public String toString() {
-        return "Truck{chassisID="+this.chassisID+", registrationDate="+this.registrationDate+"}";
+        return "\nTruck{chassisID="+this.chassisID+", registrationDate="+this.registrationDate+"}";
     }
     
     
