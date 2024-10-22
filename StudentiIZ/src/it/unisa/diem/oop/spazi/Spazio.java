@@ -9,6 +9,10 @@ public abstract class Spazio implements Accessibile {
         this.maxPosti = maxPosti;
     }
     
+    private static int ciaone(){
+        return 1;
+    }
+    
     public String getNome(){
         return this.nome;
     }

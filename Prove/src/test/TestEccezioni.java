@@ -1,9 +1,9 @@
-package prove;
+package test;
 
 import exceptions.AccessibileUnoException;
 import classi.Coordinate2D;
 
-public class MainEccezioni {
+public class TestEccezioni {
     public static void main(String[] args) {
             
         Coordinate2D coord1 = new Coordinate2D(2.5f,2.4f);

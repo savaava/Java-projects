@@ -15,8 +15,8 @@ public class MainDateClassi {
         System.out.println("\ndata1: "+data1+"\ndata2: "+data2);
         System.out.println("compareTo: "+data1.compareTo(data2));
         System.out.println("isAfter: "+data1.isAfter(data2));
-        System.out.println("period: "+data2.until(data1));
         System.out.println("period: "+data1.until(data2));
+        System.out.println("period: "+data2.until(data1));
         
         
         Period period;

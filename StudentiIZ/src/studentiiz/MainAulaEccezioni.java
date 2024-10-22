@@ -4,11 +4,12 @@ import it.unisa.diem.oop.persone.*;
 import it.unisa.diem.oop.spazi.*;
 import it.unisa.diem.oop.spazi.exceptions.AulaPienaException;
 import it.unisa.diem.oop.spazi.exceptions.AulaVuotaException;
+import it.unisa.diem.oop.spazi.exceptions.VotoNonConsentitoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class MainAula {
+public class MainAulaEccezioni {
     public static void main(String[] args) /*throws AulaPienaException (altra sol)*/{
         Persona p = new Persona("Mario", "Rossi", "MRS0001");
         Studente s = new Studente("Stefano", "Grigi", "HABSD", "0612893", 29F);
@@ -29,10 +30,35 @@ public class MainAula {
         try {
             a.entra(s);
         } catch (AulaPienaException ex) {
-            Logger.getLogger(MainAula.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         } finally {
-            /*nel finally forziamo le istruzioni di chiudere le connessioni coi server aperte nel try*/
             System.out.println("finallyyyyy");
-        }        
+        }
+        
+        try {
+            a.entra(s);
+            a.esce();
+        } catch (AulaPienaException ex) {
+            System.out.println(ex.getMessage());
+        }catch(Exception ex){
+            System.out.println("Eccezione generica");
+        }
+        
+//        try {
+//            a.entra(s);
+//        }catch(Exception ex){
+//            System.out.println("Eccezione generica");
+//        }catch(AulaPienaException ex){
+//            System.out.println(ex.getMessage());
+//        } 
+        
+        try {
+            a.entra(s);
+            a.esce();
+        }catch(AulaPienaException ex){
+            System.out.println("Eccezione generica");
+        }catch(AccessibileException ex){
+            System.out.println(ex.getMessage());
+        }
     }
 }

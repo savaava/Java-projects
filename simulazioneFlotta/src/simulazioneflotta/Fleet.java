@@ -23,6 +23,7 @@ public class Fleet {
         
         for(Truck ti : this.flotta){
             if(ti instanceof Tanker){ /* vero solo quando ti è Tanker quindi è corretto */
+            //if(ti.getClass() == Tanker.class){ /* va bene lo stesso */
                 tmpTi = (Tanker)ti;
                 if(tmpTi.isFoodGrade())
                     flottaNuova.add(tmpTi);

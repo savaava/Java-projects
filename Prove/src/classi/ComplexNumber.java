@@ -1,5 +1,7 @@
 package classi;
 
+import exceptions.ParteRealeNegativaException;
+
 public class ComplexNumber {
     private double parteReale;
     private double parteImmaginaria;
@@ -9,33 +11,33 @@ public class ComplexNumber {
         this(0.0,0.0);
     }
     
-    public ComplexNumber(double parteReale, double parteImmaginaria){ 
+    public ComplexNumber(double parteReale, double parteImmaginaria){        
         this.parteReale = parteReale;
         this.parteImmaginaria = parteImmaginaria;
         conteggioNumeri++;
     }
     
-    public void setParteReale(double parteReale){        
-        this.parteReale = parteReale;
-    }
-    
-    public void setParteImmaginaria(double parteImmaginaria){
-        this.parteImmaginaria = parteImmaginaria;
-    }
-    
     public double getParteReale(){
         return parteReale;
-    }
-    
+    }    
     public double getParteImmaginaria(){
         return parteImmaginaria;
+    }    
+    public static int getConteggioNumeri(){
+        return conteggioNumeri;
     }
     
-    public void stampaComplexNumberCartesiana(){
-        System.out.println("Forma Cartesiana: "+parteReale+" + "+parteImmaginaria+"j");
+    public void add(ComplexNumber z) throws ParteRealeNegativaException{
+        if(z.parteReale<0) 
+            throw new ParteRealeNegativaException("ECCEZIONE: il parametro passato al metodo add ha parte Re < 0");
+        this.parteReale+=z.parteReale;
+        this.parteImmaginaria+=z.parteImmaginaria;
     }
     
-    public void stampaComplexNumberPolare(){
+    private String formaCartesiana(){
+        return parteReale+" + "+parteImmaginaria+"j";
+    }
+    private String formaPolare(){
         double rho = Math.sqrt(Math.pow(parteReale,2) + Math.pow(parteImmaginaria,2));
         double theta = Math.atan(parteImmaginaria/parteReale);
         
@@ -45,10 +47,11 @@ public class ComplexNumber {
         rho = Math.round(rho*1000)/1000.0;
         theta = Math.round(theta*1000)/1000.0;
         
-        System.out.println("Forma Polare:     "+rho+" e^j"+theta);
+        return rho+" e^(j"+theta+")";
     }
     
-    public static int getConteggioNumeri(){
-        return conteggioNumeri;
+    @Override
+    public String toString(){
+        return "\nNumero complesso:\nForma Cartesiana: "+formaCartesiana()+"\nForma Polare: "+formaPolare();
     }
 }
