@@ -159,5 +159,23 @@ public class MainCollections {
         e astratti. da java 8 c'è un cambiamento: ci possono essere dei metodi di default e dei metodi statici
         ad esempio per Math ci possono essere dei metodi statici, non possono essere ereditate dalle 
         sottointerfacce le sottointerfacce ereditano tutti i metodi TRANNE I METODI STATICI */
+        
+        /*
+        23/10
+        2 concetti
+        static import, codice per il calcolo numerico: dobbiamo scrivere un package che fa un uso massicio
+        di espressioni matematiche 
+        import static java.lang.Math.PI; perchè in questo modo non c'è bisogno di scrivere ogni volta Math.PI
+        import static java.lang.Math.*;  cos(PI * theta);
+        IMPORTO SOLO LE COSE STATICHE
+        
+        import static java.lang.System.*;
+        out.println("HELLO FUNZIONAAA");
+        
+        
+        
+        tipi enumerativi Enum
+        
+        */
     }
 }

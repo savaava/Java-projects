@@ -5,8 +5,8 @@ import it.unisa.diem.oop.spazi.*;
 import it.unisa.diem.oop.spazi.exceptions.AulaPienaException;
 import it.unisa.diem.oop.spazi.exceptions.AulaVuotaException;
 import it.unisa.diem.oop.spazi.exceptions.VotoNonConsentitoException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 
 
 public class MainAulaEccezioni {

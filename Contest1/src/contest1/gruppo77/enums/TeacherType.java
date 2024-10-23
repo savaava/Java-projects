@@ -7,7 +7,7 @@ package contest1.gruppo77.enums;
 
 /**
  *
- * @author solon
+ * @author solonapoli12@
  */
 public enum TeacherType {
     FULL_PROFESSOR, ASSOCIATE_PROFESSOR, LECTURER

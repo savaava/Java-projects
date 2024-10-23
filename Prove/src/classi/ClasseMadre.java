@@ -1,5 +1,5 @@
 package classi;
 
-public class ClasseMadre {
-
+default class ClasseMadre {
+      
 }
