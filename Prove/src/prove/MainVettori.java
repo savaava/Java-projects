@@ -2,7 +2,7 @@ package prove;
 
 import classi.ClasseMadre;
 
-public class Main {
+public class MainVettori {
     public static void main(String[] args) {
         System.out.println(args);
         
@@ -11,6 +11,6 @@ public class Main {
         
         System.out.println(provaClasse);
         System.out.println(provaClasse[0]);
-        Object
+        //Object
     }
 }
