@@ -1,4 +1,4 @@
-package oop2018.itinere1.gruppo77;
+package oop2018.itinere1.gruppo77.ausiliare;
 
 import java.util.List;
 import java.util.ArrayList;

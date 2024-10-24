@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="oop2018.itinere1.gruppo77.azioni">
+  <ClassDiagramComponents>
+    <Class name="ImpostaLivello" package="oop2018.itinere1.gruppo77.azioni" visibility="public" xPosition="96.0" yPosition="367.0">
+      <Fields>
+        <Field name="ar" type="AttuatoreRegolabile" visibility="private"/>
+        <Field name="livelloDaImpostare" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="AttuatoreRegolabile" name="ar"/>
+          <Argument type="double" name="livelloDaImpostare"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="esegui" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ImpostaStatoAccensione" package="oop2018.itinere1.gruppo77.azioni" visibility="public" xPosition="548.0" yPosition="367.0">
+      <Fields>
+        <Field name="attuatore" type="Attuatore" visibility="package"/>
+        <Field name="setOn" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Attuatore" name="attuatore"/>
+          <Argument type="boolean" name="setOn"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="esegui" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Azione" package="oop2018.itinere1.gruppo77.azioni" visibility="public" xPosition="445.0" yPosition="74.0">
+      <Methods>
+        <Method name="esegui" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="oop2018.itinere1.gruppo77.azioni.ImpostaStatoAccensione" target="oop2018.itinere1.gruppo77.azioni.Azione"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="oop2018.itinere1.gruppo77.azioni.ImpostaLivello" target="oop2018.itinere1.gruppo77.azioni.Azione"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

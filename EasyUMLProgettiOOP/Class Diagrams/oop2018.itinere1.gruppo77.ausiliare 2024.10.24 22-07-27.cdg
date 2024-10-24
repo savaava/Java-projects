@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="oop2018.itinere1.gruppo77.ausiliare">
+  <ClassDiagramComponents>
+    <Class name="Impianto" package="oop2018.itinere1.gruppo77.ausiliare" visibility="public" xPosition="95.0" yPosition="112.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private" isFinal="true"/>
+        <Field name="regole" type="List&lt;Regola&gt;" visibility="private"/>
+        <Field name="dispositivi" type="Set&lt;Dispositivo&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="add" returnType="Dispositivo" visibility="public">
+          <Argument type="Dispositivo" name="d"/>
+        </Method>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="Regola" name="r"/>
+        </Method>
+        <Method name="getDispositivo" returnType="Dispositivo" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="applicaRegole" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Regola" package="oop2018.itinere1.gruppo77.ausiliare" visibility="public" xPosition="443.0" yPosition="131.0">
+      <Fields>
+        <Field name="condizione" type="Condizione" visibility="private"/>
+        <Field name="azione" type="Azione" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Condizione" name="condizione"/>
+          <Argument type="Azione" name="azione"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCondizione" returnType="Condizione" visibility="public"/>
+        <Method name="getAzione" returnType="Azione" visibility="public"/>
+        <Method name="applica" returnType="boolean" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TestImpianto" package="oop2018.itinere1.gruppo77.ausiliare" visibility="public" xPosition="286.0" yPosition="436.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="oop2018.itinere1.gruppo77.ausiliare.Impianto" target="oop2018.itinere1.gruppo77.ausiliare.Regola" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="regole" source="oop2018.itinere1.gruppo77.ausiliare.Impianto" target="oop2018.itinere1.gruppo77.ausiliare.Regola" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Regola&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

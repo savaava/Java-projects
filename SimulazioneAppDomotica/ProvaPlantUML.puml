@@ -1,0 +1,22 @@
+@startuml
+abstract class oop2018.itinere1.gruppo77.dispositivi.Attuatore
+abstract class oop2018.itinere1.gruppo77.dispositivi.AttuatoreRegolabile
+abstract class oop2018.itinere1.gruppo77.dispositivi.Dispositivo
+abstract class oop2018.itinere1.gruppo77.dispositivi.Sensore
+class java.lang.Exception
+class oop2018.itinere1.gruppo77.dispositivi.Condizionatore
+class oop2018.itinere1.gruppo77.dispositivi.LivelloNonValidoException
+class oop2018.itinere1.gruppo77.dispositivi.Luce
+class oop2018.itinere1.gruppo77.dispositivi.LuceRegolabile
+class oop2018.itinere1.gruppo77.dispositivi.SensoreLuminosita
+class oop2018.itinere1.gruppo77.dispositivi.SensoreTemperatura
+oop2018.itinere1.gruppo77.dispositivi.Attuatore --|> oop2018.itinere1.gruppo77.dispositivi.Dispositivo
+oop2018.itinere1.gruppo77.dispositivi.AttuatoreRegolabile --|> oop2018.itinere1.gruppo77.dispositivi.Attuatore
+oop2018.itinere1.gruppo77.dispositivi.Sensore --|> oop2018.itinere1.gruppo77.dispositivi.Dispositivo
+oop2018.itinere1.gruppo77.dispositivi.Condizionatore --|> oop2018.itinere1.gruppo77.dispositivi.AttuatoreRegolabile
+oop2018.itinere1.gruppo77.dispositivi.LivelloNonValidoException --|> java.lang.Exception
+oop2018.itinere1.gruppo77.dispositivi.Luce --|> oop2018.itinere1.gruppo77.dispositivi.Attuatore
+oop2018.itinere1.gruppo77.dispositivi.LuceRegolabile --|> oop2018.itinere1.gruppo77.dispositivi.AttuatoreRegolabile
+oop2018.itinere1.gruppo77.dispositivi.SensoreLuminosita --|> oop2018.itinere1.gruppo77.dispositivi.Sensore
+oop2018.itinere1.gruppo77.dispositivi.SensoreTemperatura --|> oop2018.itinere1.gruppo77.dispositivi.Sensore
+@enduml

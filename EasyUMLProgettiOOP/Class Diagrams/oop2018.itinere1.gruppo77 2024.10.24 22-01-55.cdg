@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="oop2018.itinere1.gruppo77">
+  <ClassDiagramComponents>
+    <Class name="Dispositivo" package="oop2018.itinere1.gruppo77.dispositivi" visibility="public" isAbstract="true" xPosition="22.0" yPosition="17.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private" isFinal="true"/>
+        <Field name="acceso" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="isAcceso" returnType="boolean" visibility="public"/>
+        <Method name="accendi" returnType="void" visibility="public"/>
+        <Method name="spegni" returnType="void" visibility="public"/>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Impianto" package="oop2018.itinere1.gruppo77" visibility="public" xPosition="340.0" yPosition="35.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private" isFinal="true"/>
+        <Field name="regole" type="List&lt;Regola&gt;" visibility="private"/>
+        <Field name="dispositivi" type="Set&lt;Dispositivo&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="add" returnType="Dispositivo" visibility="public">
+          <Argument type="Dispositivo" name="d"/>
+        </Method>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="Regola" name="r"/>
+        </Method>
+        <Method name="getDispositivo" returnType="Dispositivo" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="applicaRegole" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Regola" package="oop2018.itinere1.gruppo77" visibility="public" xPosition="302.0" yPosition="386.0">
+      <Fields>
+        <Field name="condizione" type="Condizione" visibility="private"/>
+        <Field name="azione" type="Azione" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Condizione" name="condizione"/>
+          <Argument type="Azione" name="azione"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCondizione" returnType="Condizione" visibility="public"/>
+        <Method name="getAzione" returnType="Azione" visibility="public"/>
+        <Method name="applica" returnType="boolean" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TestImpianto" package="oop2018.itinere1.gruppo77" visibility="public" xPosition="33.0" yPosition="474.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Azione" package="oop2018.itinere1.gruppo77.azioni" visibility="public" xPosition="226.0" yPosition="673.0">
+      <Methods>
+        <Method name="esegui" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="Condizione" package="oop2018.itinere1.gruppo77.condizioni" visibility="public" xPosition="431.0" yPosition="673.0">
+      <Methods>
+        <Method name="verifica" returnType="boolean" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="regole" source="oop2018.itinere1.gruppo77.Impianto" target="oop2018.itinere1.gruppo77.Regola" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Regola&gt;"/>
+    <UseRelation source="oop2018.itinere1.gruppo77.Regola" target="oop2018.itinere1.gruppo77.condizioni.Condizione" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="oop2018.itinere1.gruppo77.Regola" target="oop2018.itinere1.gruppo77.azioni.Azione" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="oop2018.itinere1.gruppo77.Impianto" target="oop2018.itinere1.gruppo77.dispositivi.Dispositivo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="oop2018.itinere1.gruppo77.Impianto" target="oop2018.itinere1.gruppo77.Regola" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="condizione" source="oop2018.itinere1.gruppo77.Regola" target="oop2018.itinere1.gruppo77.condizioni.Condizione" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dispositivi" source="oop2018.itinere1.gruppo77.Impianto" target="oop2018.itinere1.gruppo77.dispositivi.Dispositivo" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Set&lt;Dispositivo&gt;"/>
+    <HasRelation name="azione" source="oop2018.itinere1.gruppo77.Regola" target="oop2018.itinere1.gruppo77.azioni.Azione" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
