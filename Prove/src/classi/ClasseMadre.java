@@ -17,4 +17,8 @@ public class ClasseMadre implements InterfacciaMadre,InterfacciaFiglia {
 //    public void metodo3(){
 //        System.out.println("metodo3 default di InterfacciaMadre");
 //    }
+    
+    public ClasseMadre metodo4(){
+        return null;
+    }
 }

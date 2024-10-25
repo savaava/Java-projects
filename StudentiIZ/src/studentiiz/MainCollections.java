@@ -177,5 +177,52 @@ public class MainCollections {
         tipi enumerativi Enum
         
         */
+        
+        
+        /*
+        25/10
+        casting runtime 
+        override 
+        
+        1) il blocco/inizializzatore static{} è un blocco di codice che viene chiamato solo una volta
+        all'inizio quando viene chiamato un metodo della classe (quando si usa un metodo statico
+        senza inizializzare un oggetto -> blocco static)
+        (oppure quando viene istanziato il primo oggetto -> blocco statico) 
+        solo la prima volta !
+        poi c'è un blocco di inizializzazione non statico ????
+        ???????? serve ad esempio per inizializzare una variabile statica = 0 per il conteggio
+        risposta: static inizializer, static metod, ????? 
+        
+        2) risposta: vero è scorretto una classe non può essere statica, solo una classe annidata
+        
+        3) risposta: falso
+        
+        4) risposta: vero
+        
+        5) risposta: falso (set e get)
+        
+        6) risposta: true
+        
+        una classe astratta può estendere solo un'altra classe astratta
+        
+        1.0 NON E' UN OVERRIDE E' UN OVERLOADING perchè si distingue dal tipo in ingresso
+        
+        Un metodo che dichiara una clausola throws può essere invocato solo se si gestisce
+        all’interno di un blocco try-catch. non è vero perchè si potrebbe mettere throws anche per unchecked
+        
+        123
+        
+        Override vale quando il tipo di ritorno è una sottoclasse 
+        
+        
+        
+        
+        
+        
+        private final Set<Persona> elenco;
+        va bene 
+        */
+        String str2 = 'c';
+        String str = new String('c');
     }
 }

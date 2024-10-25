@@ -6,7 +6,7 @@ import java.util.HashSet;
 public class Fleet {
     
    private final String name;
-   private Set<Truck> flotta;
+   private final Set<Truck> flotta;
 
     public Fleet(String name) {
         this.name = name;
