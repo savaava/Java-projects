@@ -30,10 +30,7 @@ public class MainCollections {
         
         System.out.println("\n\n\n");
         
-        /*
-        Un oggetto che ci consente di attraversare la collezione e ci sono una serie di metodi da implementare
-        convertire (come faccio a dire se due collezioni sono uguali)
-        */
+        
         
         List<Persona> persone = new ArrayList<Persona>();
         persone.add(p);
@@ -52,10 +49,7 @@ public class MainCollections {
             System.out.println(pcurr);
         }
         
-        /*
-        è buona norma stabilire il tipo di dato più gnerale possibile affinchè in presenza
-        di un aggiornamento futuro non causa troppi problemi
-        */
+        
         
         System.out.println("\n\n\n"+persone.get(1));
         
@@ -70,8 +64,6 @@ public class MainCollections {
         System.out.println(persone2);
         
         System.out.println(persone2.contains(s));
-        
-        
         
         
         System.out.println("\n\n\nTREE---------------------------------------------------");
@@ -140,6 +132,8 @@ public class MainCollections {
         
         
         
+        
+        
         E' possibile usare il forEach anche per gli array:
         
         per definizione il forEach per gli array si scorre tutti i posti dell'array, attraversanzo
@@ -148,35 +142,6 @@ public class MainCollections {
         */
         //String riciclabili[] = new Strin[5]; -> 2 posizioni non inizializzate ad esempio
         String riciclabili[] = {"vetro","carta","cotone"};
-
-
-        /*
-        Attributi inizializzati in linea, attributi statici. se non lo inizializziamo si imposta a 0/null
-        inizializzatore statico = blocchetto{} con la parola static (simile al costruttore) e inizializza
-        l'attributo, è l'equivalente del costruttore ma per lo spazio statico
-
-        interfacce viste sono nella modalità iniziale -> rispettano quel contratto implicitamente public
-        e astratti. da java 8 c'è un cambiamento: ci possono essere dei metodi di default e dei metodi statici
-        ad esempio per Math ci possono essere dei metodi statici, non possono essere ereditate dalle 
-        sottointerfacce le sottointerfacce ereditano tutti i metodi TRANNE I METODI STATICI */
-        
-        /*
-        23/10
-        2 concetti
-        static import, codice per il calcolo numerico: dobbiamo scrivere un package che fa un uso massicio
-        di espressioni matematiche 
-        import static java.lang.Math.PI; perchè in questo modo non c'è bisogno di scrivere ogni volta Math.PI
-        import static java.lang.Math.*;  cos(PI * theta);
-        IMPORTO SOLO LE COSE STATICHE
-        
-        import static java.lang.System.*;
-        out.println("HELLO FUNZIONAAA");
-        
-        
-        
-        tipi enumerativi Enum
-        
-        */
         
         
         /*
@@ -184,14 +149,7 @@ public class MainCollections {
         casting runtime 
         override 
         
-        1) il blocco/inizializzatore static{} è un blocco di codice che viene chiamato solo una volta
-        all'inizio quando viene chiamato un metodo della classe (quando si usa un metodo statico
-        senza inizializzare un oggetto -> blocco static)
-        (oppure quando viene istanziato il primo oggetto -> blocco statico) 
-        solo la prima volta !
-        poi c'è un blocco di inizializzazione non statico ????
-        ???????? serve ad esempio per inizializzare una variabile statica = 0 per il conteggio
-        risposta: static inizializer, static metod, ????? 
+        1) risposta: static inizializer, static metod, ????? 
         
         2) risposta: vero è scorretto una classe non può essere statica, solo una classe annidata
         
@@ -203,7 +161,6 @@ public class MainCollections {
         
         6) risposta: true
         
-        una classe astratta può estendere solo un'altra classe astratta
         
         1.0 NON E' UN OVERRIDE E' UN OVERLOADING perchè si distingue dal tipo in ingresso
         
