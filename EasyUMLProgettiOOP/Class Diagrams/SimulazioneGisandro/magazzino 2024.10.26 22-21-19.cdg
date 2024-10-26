@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="magazzino">
+  <ClassDiagramComponents>
+    <Class name="Magazzino" package="magazzino" visibility="public" xPosition="165.0" yPosition="36.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private" isFinal="true"/>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="inventario" type="Set&lt;Scorta&gt;" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="nome"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="aggiungiScorta" returnType="void" visibility="public">
+          <Argument type="Prodotto" name="p"/>
+          <Argument type="int" name="quantita"/>
+          <Argument type="LocalDate" name="dataAggiornamento"/>
+        </Method>
+        <Method name="rimuoviScorta" returnType="void" visibility="public">
+          <Argument type="String" name="prodottoId"/>
+          <Argument type="int" name="quantita"/>
+          <Argument type="LocalDate" name="dataAggiornamento"/>
+        </Method>
+        <Method name="getScorta" returnType="Scorta" visibility="public">
+          <Argument type="String" name="prodottoId"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Prodotto" package="magazzino" visibility="public" xPosition="766.0" yPosition="312.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private" isFinal="true"/>
+        <Field name="nome" type="String" visibility="private" isFinal="true"/>
+        <Field name="prezzoUnitario" type="double" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="nome"/>
+          <Argument type="double" name="prezzoUnitario"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="getPrezzoUnitario" returnType="double" visibility="public"/>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Scorta" package="magazzino" visibility="public" xPosition="146.0" yPosition="406.0">
+      <Fields>
+        <Field name="prodotto" type="Prodotto" visibility="private" isFinal="true"/>
+        <Field name="quantitaDisponibile" type="int" visibility="private"/>
+        <Field name="dataUltimoAggiornamento" type="LocalDate" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Prodotto" name="prodotto"/>
+          <Argument type="int" name="quantitaDisponibile"/>
+          <Argument type="LocalDate" name="dataUltimoAggiornamento"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getProdotto" returnType="Prodotto" visibility="public"/>
+        <Method name="getQuantitaDisponibile" returnType="int" visibility="public"/>
+        <Method name="getDataUltimoAggiornamento" returnType="LocalDate" visibility="public"/>
+        <Method name="setQuantitaDisponibile" returnType="void" visibility="public">
+          <Argument type="int" name="quantita"/>
+        </Method>
+        <Method name="setDataUltimoAggiornamento" returnType="void" visibility="public">
+          <Argument type="LocalDate" name="data"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="inventario" source="magazzino.Magazzino" target="magazzino.Scorta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Set&lt;Scorta&gt;"/>
+    <UseRelation source="magazzino.Magazzino" target="magazzino.Scorta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="magazzino.Magazzino" target="magazzino.Prodotto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="prodotto" source="magazzino.Scorta" target="magazzino.Prodotto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="magazzino.Scorta" target="magazzino.Prodotto" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

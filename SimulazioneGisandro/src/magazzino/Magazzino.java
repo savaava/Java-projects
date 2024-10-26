@@ -27,30 +27,22 @@ public class Magazzino {
         this.nome = nome;
     }
     
-    public void aggiungiScorta(Prodotto p, int quantita, LocalDate dataAggiornamento) throws ScortaGiaPresenteException{
-        Scorta scortaTmp;
-        try {
-            scortaTmp = new Scorta(p, quantita, dataAggiornamento);
-        } catch (QuantitaNegativaException ex) {
-            System.out.println("Non è stato aggiunta la scorta -> "+ex.getMessage());
-            return ;
-        }
+    public void aggiungiScorta(Prodotto p, int quantita, LocalDate dataAggiornamento) 
+            throws ScortaGiaPresenteException, QuantitaNegativaException {
+        
+        Scorta scortaTmp = new Scorta(p, quantita, dataAggiornamento);
         if(inventario.contains(scortaTmp)) throw new ScortaGiaPresenteException("ScortaGiaPresenteException");
         inventario.add(scortaTmp);
     }
     
     public void rimuoviScorta(String prodottoId, int quantita, LocalDate dataAggiornamento) 
-            throws QuantitaNonDisponibileException, QuantitaNegativaException, ScortaNonTrovataException {
+            throws QuantitaNonDisponibileException, QuantitaNegativaException, ScortaNonTrovataException, PrezzoNegativoException {
+        
         if(quantita < 0) throw new QuantitaNegativaException("QuantitaNegativaException");
         
         Iterator<Scorta> inventarioIt = inventario.iterator();
         Scorta scortaTmp;
-        Prodotto prodottoTmp;
-        try {
-            prodottoTmp = new Prodotto(prodottoId, "", 0); /* prodotto da cercare */
-        } catch (PrezzoNegativoException ex) {
-            return; /* non cattureremo mai questa eccezione perchè prezzo = 0 */
-        }
+        Prodotto prodottoTmp = new Prodotto(prodottoId, "", 0); /* prodotto da cercare */
         int quantitaRimanente;
         
         while(inventarioIt.hasNext()){
@@ -76,13 +68,10 @@ public class Magazzino {
         throw new ScortaNonTrovataException("ScortaNonTrovataException");
     }
     
-    public Scorta getScorta(String prodottoId) throws ScortaNonTrovataException {
-        Prodotto prodottoTmp;
-        try {
-            prodottoTmp = new Prodotto(prodottoId, "", 0); /* prodotto da cercare */
-        } catch (PrezzoNegativoException ex) {
-            return null; /* non cattureremo mai questa eccezione perchè prezzo = 0 */
-        }
+    public Scorta getScorta(String prodottoId) 
+            throws ScortaNonTrovataException, PrezzoNegativoException {
+        
+        Prodotto prodottoTmp = new Prodotto(prodottoId, "", 0); /* prodotto da cercare */
         
         for(Scorta si : inventario){
             if(si.getProdotto().equals(prodottoTmp))
