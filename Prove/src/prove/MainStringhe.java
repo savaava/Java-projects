@@ -28,7 +28,7 @@ public class MainStringhe {
         
         System.out.println();
         String str = "andreasavastano4388@gmail.com";
-        String regex = "^[a-z0-9]+@[a-z]+\\.[a-zA-Z]{2,}$";
+        String regex = "^[a-z0-9]+@[a-z]{2,}\\.[a-zA-Z]{2,}$";
         System.out.println("str: "+str+"\nregex: \""+regex+"\"\n"+str.matches(regex));
         
         System.out.println("GL181SY".matches("^[a-zA-Z]{2}\\d{3}[a-zA-Z]{2}$"));

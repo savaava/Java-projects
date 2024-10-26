@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="interfacce">
+  <ClassDiagramComponents>
+    <Interface name="Accessibile" package="interfacce" visibility="public" xPosition="296.0" yPosition="229.0">
+      <Methods>
+        <Method name="DistanzaDalCentro" returnType="float" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="BussolaInterfaccia" package="interfacce" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Methods>
+        <Method name="stampaMessaggio" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="InterfacciaFiglia" package="interfacce" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Methods>
+        <Method name="metodo2" returnType="void" visibility="package" isStatic="true"/>
+        <Method name="metodo3" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="InterfacciaMadre" package="interfacce" visibility="public" xPosition="846.0" yPosition="191.0">
+      <Methods>
+        <Method name="metodo1" returnType="void" visibility="package"/>
+        <Method name="metodo2" returnType="void" visibility="package" isStatic="true"/>
+        <Method name="metodo3" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="interfacce.InterfacciaFiglia" target="interfacce.InterfacciaMadre"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
