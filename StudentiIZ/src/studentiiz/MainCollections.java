@@ -85,10 +85,6 @@ public class MainCollections {
         persone3.add(p);
         persone3.add(p1);
         System.out.println("\n\n"+persone3);
-        /*run time va a cercare l'implementazione del metodo compareTo e non trovandola errore*/
-        
-        /*Comparator interfaccia generica che mi consente di definiire una classe che la implementa
-        e quindi un oggetto comparatore (queste interfacce usate sort per le liste) */
         
         
         
@@ -120,20 +116,26 @@ public class MainCollections {
         
         /*
         aspetto teorico 10 - 12 minuti -> 8 domande 4 sezioni -> 
-        1 modello OOP - fondamenti java, 2 ereditarietà 3 eccezioni, 4 collezioni
-        per ogni sezione 2 domande: 1 con un piccolo frammento di codice e 1 teorica
+        1 modello OOP - fondamenti java
+        2 ereditarietà
+        3 eccezioni
+        4 collezioni
+        per ogni sezione 2 domande: 
+        1 con un piccolo frammento di codice
+        1 teorica
         4 possibili risposte per ogni domanda (solo nelle simulazioni ci sono più risposte)
         simulazione -> 1 o più risposte esatte
         esame -> 1 sola risposta esatta
         
         parte pratica vpl activity 45 minuti
         
-        H,I,M,E -> 55 minuti alla fine non è tanto 
+        aule H,I,M,E, con i propri portatili
+        
+        55 minuti totali
+        */
         
         
-        
-        
-        
+        /*
         E' possibile usare il forEach anche per gli array:
         
         per definizione il forEach per gli array si scorre tutti i posti dell'array, attraversanzo
@@ -143,42 +145,6 @@ public class MainCollections {
         //String riciclabili[] = new Strin[5]; -> 2 posizioni non inizializzate ad esempio
         String riciclabili[] = {"vetro","carta","cotone"};
         
-        
-        /*
-        25/10
-        casting runtime 
-        override 
-        
-        1) risposta: static inizializer, static metod, ????? 
-        
-        2) risposta: vero è scorretto una classe non può essere statica, solo una classe annidata
-        
-        3) risposta: falso
-        
-        4) risposta: vero
-        
-        5) risposta: falso (set e get)
-        
-        6) risposta: true
-        
-        
-        1.0 NON E' UN OVERRIDE E' UN OVERLOADING perchè si distingue dal tipo in ingresso
-        
-        Un metodo che dichiara una clausola throws può essere invocato solo se si gestisce
-        all’interno di un blocco try-catch. non è vero perchè si potrebbe mettere throws anche per unchecked
-        
-        123
-        
-        Override vale quando il tipo di ritorno è una sottoclasse 
-        
-        
-        
-        
-        
-        
-        private final Set<Persona> elenco;
-        va bene 
-        */
         String str2 = 'c';
         String str = new String('c');
     }

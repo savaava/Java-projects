@@ -15,7 +15,7 @@ public class ClasseMadre implements InterfacciaMadre,InterfacciaFiglia {
     
     @Override
     public void metodo3(){
-        System.out.println("metodo3 default ereditato da InterfacciaMadre");
+        System.out.println("metodo3 default -> public ereditato da InterfacciaMadre");
     }
     
     public ClasseMadre metodo4(){

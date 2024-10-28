@@ -7,7 +7,7 @@ import it.unisa.diem.oop.provided.*;
 
 public class DeviceStore implements Filterable {
     private final String name;
-    private Set<Device> store;
+    private final Set<Device> store;
     
     /* relazione d'ordine numero 1 del TreeSet */
     public DeviceStore(String name){
@@ -46,9 +46,9 @@ public class DeviceStore implements Filterable {
     @Override
     public String toString(){
         StringBuffer strb = new StringBuffer(name);
-        strb.append(" contains ").append(store.size()).append(" items.\nPrinting:\n*****\n");
+        strb.append(" contains ").append(store.size()).append(" items.\nPrinting:");
         for(Device di : store){
-            strb.append(di).append("\n*****\n");
+            strb.append("\n*****\n").append(di);
         }
         return strb.toString();
     }

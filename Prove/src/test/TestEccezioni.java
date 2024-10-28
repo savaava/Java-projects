@@ -8,6 +8,7 @@ import exceptions.AccessibileUnoException;
 import classi.Coordinate2D;
 import exceptions.NonControllataException;
 import exceptions.NumeriComplessiException;
+import exceptions.ParteRealeNegativaException;
 
 public class TestEccezioni {
     public static void main(String[] args) {
@@ -37,54 +38,57 @@ public class TestEccezioni {
         
         System.out.println(coord1);
         System.out.println(coord2);
-        System.out.println(coord3);
+        System.out.print(coord3);
         
-        System.out.println("\n\n");
+        System.out.println("\n---------------------------------------------\n");
         
         
         ComplexNumber z = new ComplexNumber(2.1,3.5);
-        System.out.println(z);
+        System.out.println("z:"+z);
+        
         try{
-            z.add(new ComplexNumber());
-            System.out.println("\nNumeriComplessiException non catturata"+z);
+            z.add(new ComplexNumber(5,7.5));
+            System.out.println("\nNumeriComplessiException non catturata\n\nz nuovo:"+z);
         }catch(NumeriComplessiException ex){
             System.out.println(ex.getMessage());
-        }        
+        }       
+        
         try{
             z.add(new ComplexNumber(-2.5,5));
             System.out.println("\nNumeriComplessiException non catturata"+z);
         }catch(NumeriComplessiException ex){
             System.out.println("\n"+ex.getMessage());
         }
+        
 //        try{
 //            z.add(new ComplexNumber(-2.5,5));
 //            System.out.println("\nNumeriComplessiException non catturata"+z);
 //        }finally{
 //            System.out.println("finallyyyyy");
-//        }
+//        }        
         
+        System.out.println("\n---------------------------------------------\n");
         
-        System.out.println("\n\n");
-        
+        //ClasseProva.metodoProveEccezione(-5);
         try{
-        ClasseProva.metodoProveEccezione(5);
-        ClasseProva.metodoProveEccezione(-5);
+            ClasseProva.metodoProveEccezione(5);
+            ClasseProva.metodoProveEccezione(-5);
         }catch(NonControllataException | ArithmeticException ex){
             System.out.println(ex.getMessage());
         }
         try{
-        ClasseProva.metodoProveEccezione(-5);
+            ClasseProva.metodoProveEccezione(-5);
         }catch(RuntimeException ex){
             System.out.println(ex.getMessage());
         }
         try{
-        ClasseProva.metodoProveEccezione(-5);
+            ClasseProva.metodoProveEccezione(-5);
         }catch(ArithmeticException ex){
             System.out.println(ex.getMessage());
         }
         
         
-        System.out.println("\n\n");
+        System.out.println("\n---------------------------------------------\n");
         
         /* eccezioni non controllate con il blocco */
         try{
@@ -114,8 +118,7 @@ public class TestEccezioni {
             System.out.println("finallyyy -> andiamo avanti");
         }
         
-        System.out.println("\n\n");
-        
+        //System.out.println("\n---------------------------------------------\n");       
         
         /* eccezioni non controllate normali */
         //double div = 5/0; /* causa java.lang.ArithmeticException: / by zero */
@@ -128,7 +131,13 @@ public class TestEccezioni {
         String str = null;
         //System.out.println(str.length()); /* causa java.lang.NullPointerException */
         
-        //ClasseMadre o = new ClasseMadre();
+        //System.out.println("\n---------------------------------------------\n");
+        
+        ClasseMadre o = new ClasseMadre();
         //ClasseFiglia1 oCastato = o;
+        
+        System.out.println("\n---------------------------------------------\n");
+        
+        
     }
 }

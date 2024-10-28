@@ -1,6 +1,8 @@
 package classi;
 
 import exceptions.ParteRealeNegativaException;
+import exceptions.ParteImmaginariaNegativaException;
+import exceptions.NumeriComplessiException;
 
 public class ComplexNumber {
     private double parteReale;
@@ -27,7 +29,7 @@ public class ComplexNumber {
         return conteggioNumeri;
     }
     
-    public void add(ComplexNumber z) throws ParteRealeNegativaException{
+    public void add(ComplexNumber z) throws ParteRealeNegativaException {
         if(z.parteReale<0) 
             throw new ParteRealeNegativaException("ECCEZIONE: il parametro passato al metodo add ha parte Re < 0");
         this.parteReale+=z.parteReale;

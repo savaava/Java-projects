@@ -28,6 +28,6 @@ public class TestSottoClassi {
         
         figlio2 = new ClasseFiglia2();
         System.out.println(figlio2 instanceof ClasseMadre);              /* true */
-        System.out.println(figlio2.getClass() == ClasseFiglia2.class);   /* true */
+        System.out.println(figlio2.getClass() == ClasseFiglia2.class);   /* true */              
     }
 }

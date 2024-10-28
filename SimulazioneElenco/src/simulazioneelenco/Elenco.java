@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class Elenco {
-    Set<Persona> e;
+    private final Set<Persona> e;
     
     public Elenco(){
         e = new HashSet<>();

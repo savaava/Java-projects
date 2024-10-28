@@ -3,6 +3,10 @@ package interfacce;
 public interface InterfacciaMadre {
     void metodo1();
     
+    static void metodoStaticoUno(){
+        System.out.println("metodoStaticoUno di InterfacciaMadre");
+    }
+    
     static void metodo2(){
         System.out.println("metodo2 statico di InterfacciaMadre");
     }

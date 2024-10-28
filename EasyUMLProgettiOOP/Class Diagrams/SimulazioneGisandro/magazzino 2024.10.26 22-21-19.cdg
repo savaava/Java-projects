@@ -36,7 +36,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Prodotto" package="magazzino" visibility="public" xPosition="766.0" yPosition="312.0">
+    <Class name="Prodotto" package="magazzino" visibility="public" xPosition="831.0" yPosition="396.0">
       <Fields>
         <Field name="id" type="String" visibility="private" isFinal="true"/>
         <Field name="nome" type="String" visibility="private" isFinal="true"/>
@@ -93,9 +93,9 @@
   </ClassDiagramComponents>
   <ClassDiagramRelations>
     <HasRelation name="inventario" source="magazzino.Magazzino" target="magazzino.Scorta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Set&lt;Scorta&gt;"/>
-    <UseRelation source="magazzino.Magazzino" target="magazzino.Scorta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="magazzino.Scorta" target="magazzino.Prodotto" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="magazzino.Magazzino" target="magazzino.Prodotto" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="prodotto" source="magazzino.Scorta" target="magazzino.Prodotto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="magazzino.Scorta" target="magazzino.Prodotto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="magazzino.Magazzino" target="magazzino.Scorta" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

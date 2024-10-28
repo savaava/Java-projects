@@ -8,8 +8,8 @@ import oop2018.itinere1.gruppo77.dispositivi.Dispositivo;
 
 public class Impianto {
     private final String nome;
-    private List<Regola> regole;
-    private Set<Dispositivo> dispositivi;
+    private final List<Regola> regole;
+    private final Set<Dispositivo> dispositivi;
     
     public Impianto(String nome){
         this.nome=nome;

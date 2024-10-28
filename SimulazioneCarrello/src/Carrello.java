@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Carrello {
-    List<Prodotto> carrello;
+    private final List<Prodotto> carrello;
     
     public Carrello(){
         carrello = new ArrayList<>();

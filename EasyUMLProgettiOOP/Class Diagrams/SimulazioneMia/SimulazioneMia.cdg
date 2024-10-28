@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="SimulazioneMia">
+  <ClassDiagramComponents>
+    <Class name="Zaino" package="" visibility="public" xPosition="555.0" yPosition="31.0">
+      <Fields>
+        <Field name="proprietario" type="String" visibility="private"/>
+        <Field name="astuccio" type="Astuccio" visibility="private"/>
+        <Field name="quaderni" type="StrutturaDati&lt;Quaderno&gt;" visibility="private"/>
+        <Field name="capienzaMassimaOggetti" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="proprietario"/>
+          <Argument type="int" name="capienzaMassimaOggetti"/>
+          <Argument type="Astuccio" name="astuccio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getProprietario" returnType="String" visibility="public"/>
+        <Method name="getCapienzaMassimaOggetti" returnType="int" visibility="public"/>
+        <Method name="aggiungiQuad" returnType="void" visibility="public">
+          <Argument type="Quaderno" name="q"/>
+        </Method>
+        <Method name="rimuoviQuad" returnType="void" visibility="public">
+          <Argument type="Quaderno" name="q"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getFromAstuccio" returnType="StrumentoScrittura" visibility="public">
+          <Argument type="StrumentoScrittura" name="s"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Astuccio" package="" visibility="public" xPosition="435.0" yPosition="392.0">
+      <Fields>
+        <Field name="proprietario" type="String" visibility="private"/>
+        <Field name="astuccio" type="StrutturaDati&lt;StrumentoScrittura&gt;" visibility="private"/>
+        <Field name="capienzaMassimaOggetti" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="proprietario"/>
+          <Argument type="int" name="capienzaMassimaOggetti"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getProprietario" returnType="String" visibility="public"/>
+        <Method name="aggiuntaStrumento" returnType="void" visibility="public">
+          <Argument type="StrumentoScrittura" name="s"/>
+        </Method>
+        <Method name="rimuoviStrumento" returnType="void" visibility="public">
+          <Argument type="StrumentoScrittura" name="s"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getCapienzaMassimaOggetti" returnType="int" visibility="public"/>
+        <Method name="getAstuccio" returnType="StrutturaDati&lt;StrumentoScrittura&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Quaderno" package="" visibility="public" xPosition="838.0" yPosition="392.0">
+      <Fields>
+        <Field name="pagine" type="int" visibility="private"/>
+        <Field name="colore" type="String" visibility="private"/>
+        <Field name="copertinaRigida" type="boolean" visibility="private"/>
+        <Field name="proprietario" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="pagine"/>
+          <Argument type="String" name="colore"/>
+          <Argument type="boolean" name="copertinaRigida"/>
+          <Argument type="String" name="proprietario"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getProprietario" returnType="String" visibility="public"/>
+        <Method name="getPagine" returnType="int" visibility="public"/>
+        <Method name="getColore" returnType="String" visibility="public"/>
+        <Method name="getCopertinaRigida" returnType="boolean" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Penna" package="" visibility="public" xPosition="726.0" yPosition="1028.0">
+      <Fields>
+        <Field name="marchio" type="PennaMarchio" visibility="private"/>
+        <Field name="inchiostro" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="proprietario"/>
+          <Argument type="double" name="prezzo"/>
+          <Argument type="PennaMarchio" name="marchio"/>
+          <Argument type="double" name="inchiostro"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getInchiostro" returnType="double" visibility="public"/>
+        <Method name="getMarchio" returnType="PennaMarchio" visibility="public"/>
+        <Method name="setInchiostro" returnType="void" visibility="public">
+          <Argument type="double" name="inchiostroConsumato"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Matita" package="" visibility="public" xPosition="264.0" yPosition="1028.0">
+      <Fields>
+        <Field name="modello" type="MatitaModello" visibility="private"/>
+        <Field name="lunghezza" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="proprietario"/>
+          <Argument type="double" name="prezzo"/>
+          <Argument type="MatitaModello" name="modello"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getLunghezza" returnType="double" visibility="public"/>
+        <Method name="getModello" returnType="MatitaModello" visibility="public"/>
+        <Method name="setLunghezza" returnType="void" visibility="public">
+          <Argument type="double" name="lunghezzaConsumata"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="StrumentoScrittura" package="" visibility="public" isAbstract="true" xPosition="421.0" yPosition="722.0">
+      <Fields>
+        <Field name="proprietario" type="String" visibility="private"/>
+        <Field name="prezzo" type="double" visibility="private"/>
+        <Field name="id" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="proprietario"/>
+          <Argument type="double" name="prezzo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPrezzo" returnType="double" visibility="public"/>
+        <Method name="getProprietario" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getId" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ProprietarioDiversoException" package="" visibility="public" xPosition="208.0" yPosition="351.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="SpazioSaturatoException" package="" visibility="public" xPosition="350.0" yPosition="240.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="ConsumatoException" package="" visibility="public" xPosition="208.0" yPosition="807.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="MatitaModello" package="" visibility="public" xPosition="50.0" yPosition="989.0">
+      <Literals>
+        <Literal name="H"/>
+        <Literal name="HB"/>
+        <Literal name="B"/>
+      </Literals>
+    </Enum>
+    <Enum name="PennaMarchio" package="" visibility="public" xPosition="1309.0" yPosition="935.0">
+      <Literals>
+        <Literal name="BIC"/>
+        <Literal name="PILOT"/>
+        <Literal name="PENTEL"/>
+        <Literal name="STAEDTLER"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="marchio" source="Penna" target="PennaMarchio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="astuccio" source="Zaino" target="Astuccio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="astuccio" source="Astuccio" target="StrumentoScrittura" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <IsRelation name="is" source="Matita" target="StrumentoScrittura"/>
+    <UseRelation name="modello" source="Matita" target="MatitaModello" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Penna" target="StrumentoScrittura"/>
+    <UseRelation name="quaderni" source="Zaino" target="Quaderno" sourceCardinality="1..1" targetCardinality="0..*"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

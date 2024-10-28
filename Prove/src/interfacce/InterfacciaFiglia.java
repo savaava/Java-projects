@@ -3,7 +3,7 @@ package interfacce;
 public interface InterfacciaFiglia extends InterfacciaMadre {    
     //@Override
     static void metodo2(){
-        System.out.println("metodo2 statico dall'interfaccia figlia");
+        System.out.println("metodo2 statico di InterfacciaFiglia");
     }
     
     @Override

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Aeroporto {
-    private List<Aeromobile> l;
+    private final List<Aeromobile> l;
     private final CodeChecker checker;
     
     public Aeroporto(CodeChecker checker){
