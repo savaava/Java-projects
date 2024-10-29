@@ -54,6 +54,6 @@ public class ComplexNumber {
     
     @Override
     public String toString(){
-        return "\nNumero complesso:\nForma Cartesiana: "+formaCartesiana()+"\nForma Polare: "+formaPolare();
+        return "z: Forma Cartesiana: "+formaCartesiana()+" | Forma Polare: "+formaPolare();
     }
 }

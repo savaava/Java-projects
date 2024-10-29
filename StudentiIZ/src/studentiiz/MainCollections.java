@@ -142,10 +142,5 @@ public class MainCollections {
         tutte le posizioni andando a visitare potenzialmente un elemento non inizializzato, a differenza delle
         collezioni che invece il foreach si prende solo gli elementi esistenti
         */
-        //String riciclabili[] = new Strin[5]; -> 2 posizioni non inizializzate ad esempio
-        String riciclabili[] = {"vetro","carta","cotone"};
-        
-        String str2 = 'c';
-        String str = new String('c');
     }
 }

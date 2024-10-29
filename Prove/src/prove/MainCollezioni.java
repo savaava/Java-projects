@@ -1,6 +1,7 @@
 package prove;
 
 import classi.ClasseMadre;
+import classi.ClasseFiglia1;
 import classi.ComplexNumber;
 import interfacce.InterfacciaMadre;
 
@@ -57,5 +58,9 @@ public class MainCollezioni {
         interi3.add(-2);
         interi3.add(112);
         //interi3.add("proviamo");
+        
+        System.out.println("\n---------------------------------------------\n");
+        
+        
     }
 }

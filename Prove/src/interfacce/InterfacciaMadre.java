@@ -1,6 +1,9 @@
 package interfacce;
 
 public interface InterfacciaMadre {
+    public static final int x1 = 0;
+    int x2 = 0;
+    
     void metodo1();
     
     static void metodoStaticoUno(){

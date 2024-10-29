@@ -27,5 +27,8 @@ public class TestMetodiEreditati {
         figlio2.metodo2();       /* metodo2 statico di ClasseMadre */
         
         System.out.println("\n---------------------------------------------\n");
+        
+        InterfacciaMadre o1 = new ClasseMadre();
+        o1.metodo3();
     }
 }
