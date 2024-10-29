@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) {        
         List<ClasseMadre> lista = new ArrayList<>();
         
         lista.add(new ClasseMadre(2000,2,28, 333));
@@ -32,24 +32,26 @@ public class Main {
         //Collections.sort(lista, new ComparatoreX());
         System.out.println(lista);
         
-        System.out.println("\n-----------------------------------------------\n");
-        
-        System.out.println("LISTA al contrario: ");
-        Collections.reverse(lista);
-        System.out.println(lista);
-        
-        System.out.println(Collections.frequency(lista, new ClasseMadre(2000,2,28, 333)));
         
         
-        System.out.println("\n-----------------------------------------------\n");
-        List<ClasseMadre> lista2 = new ArrayList<>();
-        System.out.println("lista2:");
-        lista2.add(new ClasseMadre(2004,2,28, 333));
-        lista2.add(new ClasseMadre(2004,11,30, 333));
-        System.out.println(lista2);
-        
-        System.out.println(Collections.disjoint(lista, lista2));
-        lista2.add(new ClasseMadre(2001,2,28, 339));
-        System.out.println(Collections.disjoint(lista, lista2));
+//        System.out.println("\n-----------------------------------------------\n");
+//        
+//        System.out.println("LISTA al contrario: ");
+//        Collections.reverse(lista);
+//        System.out.println(lista);
+//        
+//        System.out.println(Collections.frequency(lista, new ClasseMadre(2000,2,28, 333)));
+//        
+//        
+//        System.out.println("\n-----------------------------------------------\n");
+//        List<ClasseMadre> lista2 = new ArrayList<>();
+//        System.out.println("lista2:");
+//        lista2.add(new ClasseMadre(2004,2,28, 333));
+//        lista2.add(new ClasseMadre(2004,11,30, 333));
+//        System.out.println(lista2);
+//        
+//        System.out.println(Collections.disjoint(lista, lista2));
+//        lista2.add(new ClasseMadre(2001,2,28, 339));
+//        System.out.println(Collections.disjoint(lista, lista2));
     }
 }
