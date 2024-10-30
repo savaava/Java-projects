@@ -25,7 +25,7 @@ public class Person implements Comparable<Person> {
     /* final perchè non voglio che il metodo venga ridefinito nelle classi derivate */
     @Override
     public final int compareTo(Person p) {
-        return p.birthDate.compareTo(this.birthDate);
+        return birthDate.compareTo(p.birthDate);
 //        if(this.birthDate.getYear() != p.birthDate.getYear())
 //            return p.birthDate.getYear() - this.birthDate.getYear();
 //        if(this.birthDate.getMonth() != p.birthDate.getMonth())

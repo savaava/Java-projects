@@ -11,8 +11,13 @@ public class Department extends LinkedList<Person> implements Sortable, Filterab
     
     @Override
     public void sort() {
-        this.sort(new BirthDateComparator());
+        this.sort(null);
     }
+    
+//    @Override
+//    public void sort() {
+//        this.sort(new BirthDateComparator());
+//    }
     
 //    @Override
 //    public void sort() {
