@@ -1,9 +1,9 @@
 package test;
 
-import classi.ClasseMadre;
-import classi.ClasseFiglia1;
-import classi.ClasseFiglia1Figlia;
-import classi.ClasseFiglia2;
+import classi.gerarchia.ClasseMadre;
+import classi.gerarchia.ClasseFiglia1;
+import classi.gerarchia.ClasseFiglia1Figlia;
+import classi.gerarchia.ClasseFiglia2;
 
 public class TestSottoClassi {
     public static void main(String[] args) {

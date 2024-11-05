@@ -1,4 +1,4 @@
-package classi;
+package classi.gerarchia;
 
 import interfacce.InterfacciaFiglia;
 import interfacce.InterfacciaMadre;

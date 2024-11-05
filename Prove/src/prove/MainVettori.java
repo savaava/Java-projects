@@ -1,8 +1,8 @@
 package prove;
 
-import classi.ClasseFiglia1;
-import classi.ClasseFiglia1Figlia;
-import classi.ClasseMadre;
+import classi.gerarchia.ClasseFiglia1;
+import classi.gerarchia.ClasseFiglia1Figlia;
+import classi.gerarchia.ClasseMadre;
 import classi.ComplexNumber;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,54 +45,54 @@ public class MainVettori {
         interiVett[0] = 334;
         System.out.println("interiVett len: "+interiVett.length);
         
-        System.out.println("\n--------------------------------------------------\n");
-        
-        int i = 0;
-        for(String stri : strVett){
-            stri = "str"+((i++)+10); /* sto cambiando il riferimento di stri */
-            System.out.println(stri);
-        }
-        System.out.println("\n"+strVett[0]+"\n");
-        
-        
-        List<Integer> interi = new ArrayList();
-        interi.add(333);
-        interi.add(334);
-        interi.add(335);
-        System.out.println(interi.contains(333));
-        System.out.println(interi.indexOf(333));
-        System.out.println(interi.remove(new Integer(335)));
-        interi.add(335);
-        System.out.println("interi: "+interi);
-        for(Integer ii : interi){
-            System.out.println(interi.indexOf(ii)); /* stesso riferimento */
-            ii -= 300;
-            System.out.println(interi.indexOf(ii)); /* non più stesso riferimento */
-        }
-        System.out.println("interi: "+interi);
-        
-        Iterator<Integer> ii = interi.iterator(); 
-        Integer intTmp;
-        while(ii.hasNext()){
-            intTmp = ii.next();
-            System.out.println(interi.indexOf(intTmp)); /* stesso riferimento */
-            intTmp -= 300;
-            System.out.println(interi.indexOf(intTmp)); /* non più stesso riferimento */
-            System.out.println(intTmp);
-        }
-        System.out.println("interi: "+interi);
-        
-        List<ComplexNumber> complessi = new ArrayList();
-        complessi.add(new ComplexNumber(2,4));
-        complessi.add(new ComplexNumber(66,1));
-        complessi.add(new ComplexNumber(7,8));
-        System.out.println("complessi: "+complessi);
-        for(ComplexNumber zi : complessi){
-            System.out.println(complessi.indexOf(zi)); /* stesso riferimento */
-            zi.add(new ComplexNumber(300,100));
-        }
-        System.out.println("complessi: "+complessi);
-        
-        System.out.println("\n--------------------------------------------------\n");
+//        System.out.println("\n--------------------------------------------------\n");
+//        
+//        int i = 0;
+//        for(String stri : strVett){
+//            stri = "str"+((i++)+10); /* sto cambiando il riferimento di stri */
+//            System.out.println(stri);
+//        }
+//        System.out.println("\n"+strVett[0]+"\n");
+//        
+//        
+//        List<Integer> interi = new ArrayList();
+//        interi.add(333);
+//        interi.add(334);
+//        interi.add(335);
+//        System.out.println(interi.contains(333));
+//        System.out.println(interi.indexOf(333));
+//        System.out.println(interi.remove(new Integer(335)));
+//        interi.add(335);
+//        System.out.println("interi: "+interi);
+//        for(Integer ii : interi){
+//            System.out.println(interi.indexOf(ii)); /* stesso riferimento */
+//            ii -= 300;
+//            System.out.println(interi.indexOf(ii)); /* non più stesso riferimento */
+//        }
+//        System.out.println("interi: "+interi);
+//        
+//        Iterator<Integer> ii = interi.iterator(); 
+//        Integer intTmp;
+//        while(ii.hasNext()){
+//            intTmp = ii.next();
+//            System.out.println(interi.indexOf(intTmp)); /* stesso riferimento */
+//            intTmp -= 300;
+//            System.out.println(interi.indexOf(intTmp)); /* non più stesso riferimento */
+//            System.out.println(intTmp);
+//        }
+//        System.out.println("interi: "+interi);
+//        
+//        List<ComplexNumber> complessi = new ArrayList();
+//        complessi.add(new ComplexNumber(2,4));
+//        complessi.add(new ComplexNumber(66,1));
+//        complessi.add(new ComplexNumber(7,8));
+//        System.out.println("complessi: "+complessi);
+//        for(ComplexNumber zi : complessi){
+//            System.out.println(complessi.indexOf(zi)); /* stesso riferimento */
+//            zi.add(new ComplexNumber(300,100));
+//        }
+//        System.out.println("complessi: "+complessi);
+//        
+//        System.out.println("\n--------------------------------------------------\n");
     }
 }

@@ -1,7 +1,7 @@
 package test;
 
-import classi.ClasseFiglia1;
-import classi.ClasseMadre;
+import classi.gerarchia.ClasseFiglia1;
+import classi.gerarchia.ClasseMadre;
 import classi.ClasseProva;
 import classi.ComplexNumber;
 import exceptions.AccessibileUnoException;
@@ -66,27 +66,6 @@ public class TestEccezioni {
 //        }finally{
 //            System.out.println("finallyyyyy");
 //        }        
-        
-        System.out.println("\n---------------------------------------------\n");
-        
-        //ClasseProva.metodoProveEccezione(-5);
-        try{
-            ClasseProva.metodoProveEccezione(5);
-            ClasseProva.metodoProveEccezione(-5);
-        }catch(NonControllataException | ArithmeticException ex){
-            System.out.println(ex.getMessage());
-        }
-        try{
-            ClasseProva.metodoProveEccezione(-5);
-        }catch(RuntimeException ex){
-            System.out.println(ex.getMessage());
-        }
-        try{
-            ClasseProva.metodoProveEccezione(-5);
-        }catch(ArithmeticException ex){
-            System.out.println(ex.getMessage());
-        }
-        
         
         System.out.println("\n---------------------------------------------\n");
         

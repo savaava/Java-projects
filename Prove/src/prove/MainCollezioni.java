@@ -1,7 +1,7 @@
 package prove;
 
-import classi.ClasseMadre;
-import classi.ClasseFiglia1;
+import classi.gerarchia.ClasseMadre;
+import classi.gerarchia.ClasseFiglia1;
 import classi.ComplexNumber;
 import interfacce.InterfacciaMadre;
 

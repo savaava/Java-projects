@@ -1,4 +1,6 @@
-package classi;
+package classi.gerarchia;
+
+import classi.gerarchia.ClasseMadre;
 
 public class ClasseFiglia1 extends ClasseMadre {
     public static void metodo2(){
