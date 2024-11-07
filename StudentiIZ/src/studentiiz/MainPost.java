@@ -7,14 +7,6 @@ public class MainPost {
         */
         
         /*
-        06_11
-        JavaFx 
-        Classe astratta Application con 3 classi e 1 da ridefinire (start())
-        in start tutti gli oggetti che ci servono per l'applicazione
-        ridefiniamo per strutturare la nostra app
-        JavaFx per il rendering si affida a due classi: Stage (contenitore più
-        esterno per mostrare i pulsanti, ... a uno Stage è associato una Scene
-        è il background e possiamo inserire tutti gli oggetti grafici
         applicazione java è un grafo -> grafo della scena (nodo scena radice e avrà
         sotto nodi che sono i vari componenti grafici: pannelli,)
         Anche per la gestione degli eventi che vengono gestiti con una certa politica

@@ -1,0 +1,7 @@
+<map id="simulazionemia.classi.StrumentoScrittura" name="simulazionemia.classi.StrumentoScrittura">
+<area shape="rect" id="Node000001" title=" " alt="" coords="100,5,313,48"/>
+<area shape="rect" id="Node000002" href="$classsimulazionemia_1_1classi_1_1_matita.html" title=" " alt="" coords="5,96,195,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,60,118,98,115,93,165,56"/>
+<area shape="rect" id="Node000003" href="$classsimulazionemia_1_1classi_1_1_penna.html" title=" " alt="" coords="218,96,408,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,56,298,93,295,98,245,60"/>
+</map>
