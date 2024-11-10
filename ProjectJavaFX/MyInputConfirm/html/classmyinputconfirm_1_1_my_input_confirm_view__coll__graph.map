@@ -1,0 +1,9 @@
+<map id="myinputconfirm.MyInputConfirmView" name="myinputconfirm.MyInputConfirmView">
+<area shape="rect" id="Node000001" title=" " alt="" coords="17,112,253,139"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,81,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,42,126,110,122,113,62,45"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="105,5,165,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,47,138,112,132,112,132,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="188,5,263,32"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="207,45,148,113,144,110,203,42"/>
+</map>
