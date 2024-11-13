@@ -21,5 +21,15 @@ public class MainPost {
         quello che il sistema vede è la vecchia valutazione
         ci basta gestire un evento con un handler
         */        
+        
+        /*
+        13_11
+        una classe che ha come obiettivo quello di caricare tutti gli oggetti grafici dal file ti test
+        e li istanzia e li espone sul controller.
+        Con uno strumento grafico riusciamo a impostare la vista, viene caricato in maniera dinamica
+        possiamo modificare la vista con scene builder e quindi si modifica il file fxml e mantenendo i riferimenti
+        è tutto sincronizzato
+        tamplete java ant -> java FXML
+        */
     }
 }
