@@ -22,6 +22,6 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
-/ProjectJavaFX/MyStudentList/nbproject/private/
-/ProjectJavaFX/MyStudentList/build/
-/ProjectJavaFX/MyStudentList/dist/
+/ProjectJavaFX/*/nbproject/private/
+/ProjectJavaFX/*/build/
+/ProjectJavaFX/*/dist/
