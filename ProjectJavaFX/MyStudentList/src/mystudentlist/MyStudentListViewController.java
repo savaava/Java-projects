@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,6 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 
 public class MyStudentListViewController implements Initializable {
     
@@ -60,9 +62,9 @@ public class MyStudentListViewController implements Initializable {
         /* lista osservabile di studenti ora la connesione tra la table view e la lista
         table view ha setItems e itemproperty, connessione: */
         studentTable.setItems(students);
-        /* ora con add posso mettere gli studenti
-        ora però la colonna dei nomi deve prendere solo i nomi della lista
-        callback è un'interfaccia e dovrei trattarla come il comparatore */
+//        nameClm.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Student,String>, ObservableValue<String>> s) -> {
+//            return new SimpleStringProperty(s.getValue().getName());
+//        });
         nameClm.setCellValueFactory(s -> {
             /* s è un riferimento di celldatfeatures */
             //s.getValue().getName(); /* mi restituisce un tipo studente */
@@ -74,14 +76,16 @@ public class MyStudentListViewController implements Initializable {
         
         /* la seconda colonna usiamo la classe aiutante: 
         vede all'interno della classe student  */
-        surnameClm.setCellValueFactory(new PropertyValueFactory("surname"));
-        codeClm.setCellValueFactory(new PropertyValueFactory("surname"));
+        surnameClm.setCellValueFactory(new PropertyValueFactory<Student, String>("surname"));
+        codeClm.setCellValueFactory(new PropertyValueFactory<Student, String>("surname"));
         /* qui è importante la convenzione perchè se non la chiamavamo getCognome, get... allora
         non funzionava */
-//        BooleanBinding op1 = Bindings.isEmpty(new SimpleStringProperty(nameField.getName());
-//        BooleanBinding op2 = Bindings.isEmpty(new SimpleStringProperty(s.getValue().getName()));;
-//        BooleanBinding op3 = Bindings.isEmpty(new SimpleStringProperty(s.getValue().get()));;
-//        Bindings.or();
+        
+        BooleanBinding op1 = nameField.textProperty().isEmpty();
+        BooleanBinding op2 = surnameField.textProperty().isEmpty();
+        BooleanBinding op3 = codeField.textProperty().isEmpty();
+        BooleanBinding pippoCond = op1.or(op2).or(op3);
+        addButton.disableProperty().bind(pippoCond);
     }    
 
     @FXML
