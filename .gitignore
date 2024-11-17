@@ -22,9 +22,14 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# sava's dirs to be ignored
 /ProjectJava/*/nbproject/private/
 /ProjectJava/*/build/
 /ProjectJava/*/dist/
+/ProjectJava/*/html/
+
 /ProjectJavaFX/*/nbproject/private/
 /ProjectJavaFX/*/build/
 /ProjectJavaFX/*/dist/
+/ProjectJavaFX/*/html/
