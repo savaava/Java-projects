@@ -62,9 +62,8 @@ public class MyStudentListViewController implements Initializable {
         /* lista osservabile di studenti ora la connesione tra la table view e la lista
         table view ha setItems e itemproperty, connessione: */
         studentTable.setItems(students);
-//        nameClm.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Student,String>, ObservableValue<String>> s) -> {
-//            return new SimpleStringProperty(s.getValue().getName());
-//        });
+        
+        /*  */
         nameClm.setCellValueFactory(s -> {
             /* s è un riferimento di celldatfeatures */
             //s.getValue().getName(); /* mi restituisce un tipo studente */
@@ -77,7 +76,7 @@ public class MyStudentListViewController implements Initializable {
         /* la seconda colonna usiamo la classe aiutante: 
         vede all'interno della classe student  */
         surnameClm.setCellValueFactory(new PropertyValueFactory<Student, String>("surname"));
-        codeClm.setCellValueFactory(new PropertyValueFactory<Student, String>("surname"));
+        codeClm.setCellValueFactory(new PropertyValueFactory<Student, String>("code"));
         /* qui è importante la convenzione perchè se non la chiamavamo getCognome, get... allora
         non funzionava */
         
