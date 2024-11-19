@@ -1,4 +1,4 @@
-package tmpaiuto;
+package StudentiIZMap;
 
 public class Persona implements Comparable<Persona> {
     private String nome;

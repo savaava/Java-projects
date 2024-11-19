@@ -1,4 +1,4 @@
-package prove;
+package proveFX;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

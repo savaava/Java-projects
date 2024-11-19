@@ -1,4 +1,4 @@
-package prove;
+package proveFX;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
