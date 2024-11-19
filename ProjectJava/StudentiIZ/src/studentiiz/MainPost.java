@@ -31,5 +31,25 @@ public class MainPost {
         è tutto sincronizzato
         tamplete java ant -> java FXML
         */
+        
+        
+        
+        /* 18_11 Map */
+        
+        /* 20_11 InOut
+        
+        */
+        
+        /* 22_11 Esercitazione
+        
+        */
+        
+        /* 25_11 multithread
+        
+        */
+        
+        /* javafx
+        
+        */
     }
 }
