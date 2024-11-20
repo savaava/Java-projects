@@ -1,5 +1,7 @@
 package studentiiz;
 
+import java.io.FileInputStream;
+
 public class MainPost {
     public static void main(String[] args) {
         /*
@@ -37,7 +39,47 @@ public class MainPost {
         /* 18_11 Map */
         
         /* 20_11 InOut
+            This lesson covers the Java platform classes used for basic I/O. 
+        It first focuses on I/O Streams, a powerful concept that greatly simplifies 
+        I/O operations. The lesson also looks at serialization, which lets a program 
+        write whole objects out to streams and read them back again. Then the lesson 
+        looks at file I/O and file system operations, including random access files.
         
+        per scrivere su un file devono scrivere da uno stream di in o scrivere su uno stream di out
+        lettura scrittura da stream binari
+        saper leggere da qualsiasi sorgente (di rete) un file binario
+        
+        partiamo da due classi fondamentali: 
+        input.Stream (per un problema di lettura)
+        l'unico metodo astratto è il metodo read -> legge il prossimo byte da una sorgente di stream
+        specializzare questa classe astratta 
+        una volta che ne so leggere uno posso leggerne di più: l'overloading funziona solo quando 
+        concretizzo read() altrimenti le altre due read non funzionerebbero
+        Classe per leggere da file: FileInputStream
+        abbiamo un'implementazione concreta di read() 
+        FileInputStream (identifica la sorgente concreta da dove arriva il file input)
+        lo posso ereditare extends per aggiungere funzionalità
+        DataFileInputStream (interpreto l'intero), URLInputStream, però aggiungiamo sempre una sola 
+        funzionalità come lettura bufferrizzata dalla classe BufferedInputStream però ci vogliono
+        molte specializzazioni -> non è conveniente quindi si adotta una strategia diversa il pattern
+        si chiama di decorazione per arrichire l'InputStream concreto lasciandolo a parte
+        . Nell'esercizio camion l'abbiamo fatto
+        Tanker che specializza truck -> lo decoriamo e gli mettiamo componenti in più
+        il decoratore specializza solo InputStream ed è indipendente dal componente concreto
+        FilterInputStream è la classe astratta decoratore e può essere specializzato da BufferedInputStream
+        oppure DataInputStream e 
+        
+        BUONA PRATICA: chiudere alla fine lo stream con finally, con closeable
+        
+        scriviamo sul file tipi primitivi
+        a differenza di write, per la read per uscire dal ciclo usiamo un while infinito che finisce quando
+        lancia l'eccezione
+        
+        Output.Stream (per un problema di scrittura)
+        write come read 
+        
+        
+        ObjectInputStream serialaizable che dice al compilatore
         */
         
         /* 22_11 Esercitazione

@@ -20,7 +20,7 @@ public class TmpAiuto {
         elencoMap.put(new Persona("Luigione","Rossone","aisadaash",10), "089218878");
         /* se diciamo che una persona può avere più numeri allora si può invertire k e V 
         ci sono poche bucket list e poi ognuna possiede molti elementi 
-        tutto ricade nello stesso bucket*/
+        tutto ricade nello stesso bucket */
         
         String tel = elencoMap.get(new Persona("","","aiduash",9));
         System.out.println("telefono: "+tel);
