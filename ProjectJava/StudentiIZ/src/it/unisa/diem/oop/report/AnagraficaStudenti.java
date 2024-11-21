@@ -31,8 +31,6 @@ public class AnagraficaStudenti {
         return anagrafica.get(matricola);
     }
     
-    
-    
     @Override
     public String toString(){
         StringBuffer strb = new StringBuffer("Anagrafica: ");
@@ -71,6 +69,7 @@ public class AnagraficaStudenti {
             dos.writeFloat(s.getVotoMedio());
         }
         
+        System.out.println("*****Scrittura completata*****");
         /* se io chiudo dos chiudo anche fos: */
         dos.close();
     }
@@ -86,13 +85,11 @@ public class AnagraficaStudenti {
         
         DataInputStream dis = new DataInputStream(bis);
         
-        AnagraficaStudenti a = null;
+        String descrizione = dis.readUTF();
+        AnagraficaStudenti a = new AnagraficaStudenti(descrizione); 
         /* nel processo di lettura dovremmo avere un modo di capire quando terminare il ciclo
         se non abbiao un numero nel file di fianco alla descrizione allora facciamo while true: */
-        try{
-            String descrizione = dis.readUTF();        
-            a = new AnagraficaStudenti(descrizione);
-            
+        try{            
             while(true){
                 String nome = dis.readUTF();
                 String cognome = dis.readUTF();
@@ -103,7 +100,7 @@ public class AnagraficaStudenti {
                 a.aggiungi(new Studente(nome,cognome,codFiscale,matricola,votoM));
             }
         }catch(EOFException ex){
-            System.out.println("Lettura completata");
+            System.out.println("*****Lettura completata*****");
         }finally{
             dis.close();
         }

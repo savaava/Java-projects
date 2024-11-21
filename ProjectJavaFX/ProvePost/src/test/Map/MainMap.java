@@ -77,13 +77,9 @@ public class MainMap {
         Persona persona2 = new Persona("Luigi", "Verdi", "XYZ789", 30);
         Persona persona3 = new Persona("Anna", "Bianchi", "DEF456", 25);
         elenco.put(persona1, 100);
-        System.out.println(elenco);
         elenco.put(persona2, 200);
-        System.out.println(elenco);
         elenco.put(persona3, 300);
-        System.out.println(elenco);
         elenco.put(persona1, 500);
-        System.out.println(elenco);
         for (Map.Entry<Persona, Integer> entry : elenco.entrySet()) {
             System.out.println(entry.getKey() + " <-> " + entry.getValue());
         }
