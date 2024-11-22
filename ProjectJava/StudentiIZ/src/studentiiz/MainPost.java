@@ -34,8 +34,24 @@ public class MainPost {
         tamplete java ant -> java FXML
         */
         
-        /* 22_11 Esercitazione
+        /* 22_11 Esercitazione + 
+        shallow copy -> è la copia dei riferimenti degli oggetti di cui si compone, 
+        ma l'oggetto this ha un riferimento diverso rispetto alla nuova copia
+        con l'interfaccia cloneable facciamo l'override del metodo
+        clone e poi restituiamo una shallow copy (return super.clone()), eccezione controllata 
+        deep copy -> ci copiamo tutti i campi e restituiamo l'oggetto
         
+        serializzazione ben fatta semplifica la vita:
+        realizzare la persistenza di un oggetto -> salvare in maniera serializzata un oggetto
+        gli oggetti devono implementare serializable
+        vogliamo lo stato corrente dell'oggetto: è una fotografia corrente dell'oggetto
+        se abbiamo uno stato preciso possiamo serializzare  
+        modificatore transit
+        ObjectInputStream al posto di DataInputStream readObject per leggere gli oggetti direttamente
+        
+        try with resources verifica prima quella condizione e controlliamo se lancia un'eccezione
+        chiude direttamente lui il file .close lo fa try with resources, devono implementare l'interfaccia
+        closeable (chiusura implicita del file)
         */
         
         /* 25_11 multithread
