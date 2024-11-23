@@ -48,10 +48,6 @@ public class MainPost {
         se abbiamo uno stato preciso possiamo serializzare  
         modificatore transit
         ObjectInputStream al posto di DataInputStream readObject per leggere gli oggetti direttamente
-        
-        try with resources verifica prima quella condizione e controlliamo se lancia un'eccezione
-        chiude direttamente lui il file .close lo fa try with resources, devono implementare l'interfaccia
-        closeable (chiusura implicita del file)
         */
         
         /* 25_11 multithread

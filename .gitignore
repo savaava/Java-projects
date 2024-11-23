@@ -28,8 +28,10 @@ replay_pid*
 /ProjectJava/*/build/
 /ProjectJava/*/dist/
 /ProjectJava/*/html/
+/ProjectJava/*/*.bin
 
 /ProjectJavaFX/*/nbproject/private/
 /ProjectJavaFX/*/build/
 /ProjectJavaFX/*/dist/
 /ProjectJavaFX/*/html/
+/ProjectJavaFX/*/*.bin

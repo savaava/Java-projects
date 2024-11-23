@@ -1,9 +1,11 @@
 package simulazioneaeroportoio;
 
-public abstract class Aeromobile implements Cloneable {
+import java.io.Serializable;
+
+public abstract class Aeromobile implements Cloneable, Serializable {
     private final String codice;
     private final int numeroSequenziale;
-    private static int cont = 0;
+    public static int cont = 0;
     
     public Aeromobile(String codice){
         this.codice = codice;
@@ -16,10 +18,6 @@ public abstract class Aeromobile implements Cloneable {
 
     public int getNumeroSequenziale() {
         return numeroSequenziale;
-    }
-    
-    public static int getCont(){
-        return cont;
     }
     
 //    @Override
