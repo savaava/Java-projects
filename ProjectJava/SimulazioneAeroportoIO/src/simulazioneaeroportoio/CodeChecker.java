@@ -1,7 +1,5 @@
 package simulazioneaeroportoio;
 
-import java.io.Serializable;
-
-public interface CodeChecker extends Serializable{
+public interface CodeChecker{
     boolean check(String codice);
 }

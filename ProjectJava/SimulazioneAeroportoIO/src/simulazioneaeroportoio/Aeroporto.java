@@ -216,7 +216,7 @@ public class Aeroporto implements Serializable {
     
     public static Aeroporto leggiOBJ(String nomefile){
         Aeroporto aeroportoLetto = null;
-        System.out.println("**********Lettura con Deserializzazione Iniziata**********\n");
+        System.out.println("**********Lettura con Deserializzazione Iniziata**********");
         try(ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(nomefile)))){
             try {
                 aeroportoLetto = (Aeroporto)ois.readObject();
