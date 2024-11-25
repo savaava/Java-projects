@@ -23,5 +23,9 @@ public class TestAnagrafica {
         System.out.println("");
         AnagraficaStudenti letturaFileAnagrafica = AnagraficaStudenti.leggiDOS("anagrafica.bin");
         System.out.println(letturaFileAnagrafica);
+        
+        a.salvaCSV("anagrafica.csv");
+        System.out.println(AnagraficaStudenti.leggiCSV("anagrafica.csv"));
+        System.out.println(AnagraficaStudenti.leggiCSVScan("anagrafica.csv"));
     }
 }

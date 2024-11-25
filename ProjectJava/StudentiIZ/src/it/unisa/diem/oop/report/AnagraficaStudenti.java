@@ -4,15 +4,22 @@ import it.unisa.diem.oop.persone.Persona;
 import it.unisa.diem.oop.persone.Studente;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Scanner;
 
 public class AnagraficaStudenti {
     private String descrizione; 
@@ -106,4 +113,64 @@ public class AnagraficaStudenti {
         }
         return a;
     }
+    
+    public void salvaCSV(String nomefile)throws IOException{
+        /* posso salvare il nome dell'anagrafica, però i campi in un file csv sono convenzionalmente
+        separati da uno spazio o ; */
+        try(PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(nomefile)))){
+            /* sulla prima riga ci devono essere i nomi delle colonne OPPURE direttamente gli oggetti */
+            pw.println("NOME;COGNOME;CODICE FISCALE;MATRICOLA;VOTOMEDIO");
+            /* i campi intermedi sono separati da ; ma non necessariamente devo metterlo anche alla fine */
+            for(Studente si : anagrafica.values()){
+                pw.append(si.getNome()).append(";");
+                pw.append(si.getCognome()).append(";");
+                pw.append(si.getCodiceFiscale()).append(";");
+                pw.append(si.getMatricola()).append(";");
+                /* classe wrapper per il voto */
+                pw.append(""+si.getVotoMedio()).append("\n");
+            }
+        }
+    }
+    /* per la lettura csv */
+    public static AnagraficaStudenti leggiCSV(String nomefile) throws IOException{
+        String nome = nomefile.split("[.]")[0]; /* oppure \\. */
+        AnagraficaStudenti a = new AnagraficaStudenti(nome);
+        try(BufferedReader br = new BufferedReader(new FileReader(nomefile))){
+            if(br.readLine() == null) return a; /* perchè la prima linea è solo descrittiva delle colonne */
+            String line;
+            while((line = br.readLine()) != null){
+                String campi[] = line.split(";");
+                Studente s = new Studente(campi[0],campi[1],campi[2],campi[3],Float.parseFloat(campi[4]));
+                a.aggiungi(s);
+            }
+        }        
+        return a;
+    }
+    public static AnagraficaStudenti leggiCSVScan(String nomefile) throws IOException{
+        String nomef = nomefile.split("[.]")[0];
+        AnagraficaStudenti a = new AnagraficaStudenti(nomef);
+        try(Scanner scan = new Scanner(new BufferedReader(new FileReader(nomefile)))){
+            if(scan.nextLine()== null) return a;
+            /* ci scansioniamo un token per volta */
+            scan.useDelimiter("[;\n]");
+            scan.useLocale(Locale.US); 
+            /*è importante impostare la localizzazione vedendo il voto medio 28.5 se c'è
+            il punto allora è EN, quindi è sbagliato scrivere Locale.ITALY si deve mettere US*/
+            while(scan.hasNext()){
+                /* non mi serve il controllo campo per campo perchè già so com'è strutturato il file 
+                con if(hasNext), if(hasNextFloat), questo però serve quando il file potrebbe essere
+                variabile ad esempio il campo float potrebbe mancare, oppure con un try interno */
+                String nome = scan.next();
+                String cognome = scan.next();
+                String codFis = scan.next();
+                String matricola = scan.next();
+                float votoMedio = scan.nextFloat();
+                
+                a.aggiungi(new Studente(nome, cognome, codFis, matricola, votoMedio));
+            }
+        }
+        return a;
+    }
 }
+
+
