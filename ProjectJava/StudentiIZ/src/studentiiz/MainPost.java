@@ -40,51 +40,7 @@ public class MainPost {
         deep copy -> ci copiamo tutti i campi e restituiamo l'oggetto
         */
         
-        /* 25_11 
-        completiamo il discorso su IO:
-        salvataggio o recupero conservata come flusso di caratteri
-        per i caratteri è più difficile
-        lettura e scrittura binaria separate 
-        ulteriori 2 classi astratte: reader e writer per i caratteri 
-        Reader classe di partenza e vogliamo il pattern di decorazione
-        per i flussi testuali, 
-        reader è iuna classe astratta -> c'è il metodo read ma c'è un read astratto
-        BufferedReader è un decoratore serve per fare readLine
-        InputStreamReader
-        is a bridge: da un flusso di byte a un flusso di cartatteri 
-        readLine: leggiamo per linee e possiamo dividere la stringa in sottostringhe 
-        (token) file csv 
-        FileReader è un componente concreto
-        
-        PrintWriter -> println
-        
-        Scanner
-        hasNext per vedere se c'è il token successivo 
-        si ha una stringa lunga a piacere e parto con la scansione con un iteratore
-        next restituisce la stringa 
-        nextFloat può lanciare un'eccezione perchè se c'è una stringa non convertibile in Float
-        InputMismatchException
-        la prima cosa è specificare il delimitatore: di default è lo spazio bianco
-        con il metodo useDelimiter
-            
-        
-        quindi scrittura di file di testo con Writer e PrintWriter
-        
-        e lettura con bufferedReader -> prendo un testo e voglio recuperare tutte le parole
-        e vorrei selezionare tutte le parole prima devo salvare tutto il file in una maxistringa complessiva
-        poi readLine e poi metodo split e scorrere tutte le linee, 
-        mentre con lo scanner recupero il flusso un pò per volta anzichè split
-        BufferedReader mi consente due comoprtamenti: lettura di linea o di carattere
-        
-        poi lettura con scanner 
-        next 
-        posso prendere un pezzo per volta e poi uso lo scanner per ognuno quando ho un file molto grande e
-        non so dove finisce 
-        
-        
-        ESERCIZIO: new FileCUser per javaFX metodo .show() -> appare come finestra di dialogo
-        nell'esercizio della lista osservabile con gli studenti salvare gli studenti in un file e 
-        poi anche lettura da un file con filecuser, partendo da il menù a tendina con open e save
+        /* 25_11
         */
         
         /* 27_11 javafx

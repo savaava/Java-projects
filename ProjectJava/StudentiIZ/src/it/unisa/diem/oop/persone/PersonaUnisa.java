@@ -1,6 +1,6 @@
 package it.unisa.diem.oop.persone;
 
-public abstract class PersonaUnisa extends Persona {
+public abstract class PersonaUnisa extends Persona{
     private String matricola;
     
     public PersonaUnisa(String nome, String cognome, String codiceFiscale, String matricola) {

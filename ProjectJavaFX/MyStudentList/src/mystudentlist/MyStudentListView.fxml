@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.38095238095238093" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="mystudentlist.MyStudentListViewController">
+<SplitPane dividerPositions="0.38095238095238093" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mystudentlist.MyStudentListViewController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
@@ -17,8 +17,8 @@
                     <menus>
                       <Menu mnemonicParsing="false" text="File">
                         <items>
-                          <MenuItem mnemonicParsing="false" text="Apri" />
-                              <MenuItem mnemonicParsing="false" text="Salva come" />
+                          <MenuItem mnemonicParsing="false" onAction="#readCSV" text="Importa file" />
+                              <MenuItem mnemonicParsing="false" onAction="#saveCSV" text="Esporta file" />
                               <MenuItem mnemonicParsing="false" text="Esci" />
                         </items>
                       </Menu>

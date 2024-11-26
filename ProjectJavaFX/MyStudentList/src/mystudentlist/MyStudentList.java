@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class MyStudentList extends Application {    
+    private static Stage primaryStage;
+    
     @Override
     public void start(Stage stage) throws Exception {
         /*
@@ -34,6 +36,12 @@ public class MyStudentList extends Application {
         stage.setTitle("ciao");
         stage.setScene(scene);
         stage.show();
+        
+        primaryStage = stage;
+    }
+    
+    public static Stage getStage() {
+        return primaryStage;
     }
 
     public static void main(String[] args) {

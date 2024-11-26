@@ -1,9 +1,9 @@
 package mystudentlist;
 
 public class Student {
-    private String name;
-    private String surname;
-    private String code;
+    private final String name;
+    private final String surname;
+    private final String code;
 
     public Student(String name, String surname, String code) {
         this.name = name;
@@ -23,5 +23,8 @@ public class Student {
         return code;
     }
     
-    
+    @Override
+    public String toString(){
+        return "Student -> {name: "+name+" - surname: "+surname+" - code: "+code+"}";
+    }
 }
