@@ -20,15 +20,11 @@ public class SpendiSpendi implements Runnable{
                 return ;
             }
             
-//            double prelievo = (n.nextInt(19)+1)*50;
-//            c.preleva(prelievo);
-//            System.out.println(Thread.currentThread().getName()+" ha prelevato: "+prelievo+" nuovo saldo: "+c.getSaldo());
-            
-            synchronized(c){
-                double prelievo = (n.nextInt(19)+1)*50;
-                c.preleva(prelievo);
-                System.out.println(Thread.currentThread().getName()+" ha prelevato: "+prelievo+" nuovo saldo: "+c.getSaldo());
-            }
+            double prelievo = (n.nextInt(19)+1)*50;
+            c.preleva(prelievo);
+            System.out.println(Thread.currentThread().getName()
+                    +" ha prelevato: "+prelievo
+                    +" nuovo saldo: "+c.getSaldo());
         }
     }
 }
