@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="mystudentlist">
+  <ClassDiagramComponents>
+    <Class name="MyStudentList" package="mystudentlist" visibility="public" xPosition="624.0" yPosition="17.0">
+      <Fields>
+        <Field name="primaryStage" type="Stage" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="stage"/>
+        </Method>
+        <Method name="getStage" returnType="Stage" visibility="public" isStatic="true"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MyStudentListViewController" package="mystudentlist" visibility="public" xPosition="277.0" yPosition="153.0">
+      <Fields>
+        <Field name="nameField" type="TextField" visibility="private"/>
+        <Field name="surnameField" type="TextField" visibility="private"/>
+        <Field name="codeField" type="TextField" visibility="private"/>
+        <Field name="addButton" type="Button" visibility="private"/>
+        <Field name="delButton" type="Button" visibility="private"/>
+        <Field name="studentTable" type="TableView&lt;Student&gt;" visibility="private"/>
+        <Field name="nameClm" type="TableColumn&lt;Student, String&gt;" visibility="private"/>
+        <Field name="surnameClm" type="TableColumn&lt;Student, String&gt;" visibility="private"/>
+        <Field name="codeClm" type="TableColumn&lt;Student, String&gt;" visibility="private"/>
+        <Field name="students" type="ObservableList&lt;Student&gt;" visibility="private"/>
+        <Field name="fileChooserSave" type="FileChooser" visibility="private"/>
+        <Field name="fileChooserRead" type="FileChooser" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="addStudent" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="delStudent" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="saveCSV" returnType="void" visibility="private"/>
+        <Method name="readCSV" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="Student" package="mystudentlist" visibility="public" xPosition="817.0" yPosition="204.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private" isFinal="true"/>
+        <Field name="surname" type="String" visibility="private" isFinal="true"/>
+        <Field name="code" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="String" name="code"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getSurname" returnType="String" visibility="public"/>
+        <Method name="getCode" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="studentTable" source="mystudentlist.MyStudentListViewController" target="mystudentlist.Student" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="surnameClm" source="mystudentlist.MyStudentListViewController" target="mystudentlist.Student" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="codeClm" source="mystudentlist.MyStudentListViewController" target="mystudentlist.Student" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="students" source="mystudentlist.MyStudentListViewController" target="mystudentlist.Student" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ObservableList&lt;Student&gt;"/>
+    <HasRelation name="nameClm" source="mystudentlist.MyStudentListViewController" target="mystudentlist.Student" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

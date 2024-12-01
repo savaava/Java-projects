@@ -1,12 +1,10 @@
 package producerconsumer.ThreadSafe;
 
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Producer implements Runnable{
-    private Buffer<String> buffer;
-    private int delay;    
+    private final Buffer<String> buffer;
+    private final int delay;    
     
     public Producer(Buffer<String> buffer, int delay) {
         this.buffer = buffer;

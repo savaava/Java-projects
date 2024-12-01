@@ -1,8 +1,8 @@
 package producerconsumer.ThreadSafe;
 
 public class Consumer implements Runnable{
-    private Buffer<String> buffer;
-    private int delay;    
+    private final Buffer<String> buffer;
+    private final int delay;    
     
     public Consumer(Buffer<String> buffer, int delay) {
         this.buffer = buffer;

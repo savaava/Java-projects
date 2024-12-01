@@ -5,8 +5,8 @@ import java.util.Queue;
 
 public class Buffer<E> {
     /* se vogliamo rendere il buffer generico parametrizzando */
-    private int size;
-    private Queue<E> buffer;
+    private final int size;
+    private final Queue<E> buffer;
     
     public Buffer(int size){
         this.size = size;
