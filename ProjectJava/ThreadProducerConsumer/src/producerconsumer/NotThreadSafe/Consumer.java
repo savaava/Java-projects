@@ -1,4 +1,4 @@
-package producerconsumer.ThreadSafe2;
+package producerconsumer.NotThreadSafe;
 
 public class Consumer implements Runnable {
     private final Buffer<String> buffer;

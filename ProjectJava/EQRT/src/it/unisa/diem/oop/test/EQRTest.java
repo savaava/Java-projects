@@ -8,24 +8,15 @@ import it.unisa.diem.oop.developed.MagnitudeComparator;
  * @author lucagreco
  */
 public class EQRTest {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    public static void main(String[] args) {        
+        EQReport eq0 = EQReport.readFromTextFile("query.txt");
+        //System.out.println("***** Report dei terremoti dal file letto senza Scanner *****\n"+eq0);
         
+        EQReport eq = EQReport.readFromTextFile("query.txt");        
+        //System.out.println("***** Report dei terremoti dal file letto con Scanner *****\n"+eq);
         
-        EQReport eq = EQReport.readFromTextFile("query.txt");
-        
-        System.out.println(eq);
-        
-        eq.sort(new MagnitudeComparator());
-        
+        eq.sort(new MagnitudeComparator());        
         EQReport.printToTextFile(eq, "sorted.txt");
-        
-        
-        // TODO code application logic heres
-    }
-    
+    }    
 }
 

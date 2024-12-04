@@ -1,6 +1,6 @@
-package producerconsumer.ThreadSafe2;
+package producerconsumer.NotThreadSafe;
 
-public class TestThreadSafe {
+public class TestNotThreadSafe {
     public static void main(String[] args) throws InterruptedException {
         Buffer<String> buffer = new Buffer<>(3);
         Producer prod = new Producer(buffer, 2);

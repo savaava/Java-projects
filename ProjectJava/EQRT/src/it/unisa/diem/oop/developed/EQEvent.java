@@ -1,14 +1,12 @@
 package it.unisa.diem.oop.developed;
 
 import java.time.LocalDateTime;
-//import java.time.Instant;
-//import java.time.ZoneId;
 
 public class EQEvent implements Comparable<EQEvent> {
     private final String eventId;
     private final LocalDateTime time;
-    private final double Latitude;
-    private final double Longitude;
+    private final double latitude;
+    private final double longitude;
     private final double depthKm;
     private final String author;
     private final String catalog;
@@ -19,11 +17,11 @@ public class EQEvent implements Comparable<EQEvent> {
     private final String magAuthor;
     private final String eventLocationName;
 
-    public EQEvent(String eventId, LocalDateTime time, double Latitude, double Longitude, double depthKm, String author, String catalog, String contributor, String contributorId, String magType, double magnitude, String magAuthor, String eventLocationName) {
+    public EQEvent(String eventId, LocalDateTime time, double latitude, double longitude, double depthKm, String author, String catalog, String contributor, String contributorId, String magType, double magnitude, String magAuthor, String eventLocationName) {
         this.eventId = eventId;
         this.time = time;
-        this.Latitude = Latitude;
-        this.Longitude = Longitude;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.depthKm = depthKm;
         this.author = author;
         this.catalog = catalog;
@@ -44,11 +42,11 @@ public class EQEvent implements Comparable<EQEvent> {
     }
 
     public double getLatitude() {
-        return Latitude;
+        return latitude;
     }
 
     public double getLongitude() {
-        return Longitude;
+        return longitude;
     }
 
     public double getDepthKm() {
@@ -86,21 +84,6 @@ public class EQEvent implements Comparable<EQEvent> {
     public String getEventLocationName() {
         return eventLocationName;
     }
-
-//    @Override
-//    public boolean equals(Object obj){
-//        if(obj == null) return false;
-//        if(obj == this) return true;
-//        if(obj.getClass() != EQEvent.class) return false;
-//        
-//        EQEvent objEvent = (EQEvent)obj;
-//        return objEvent.eventId.equalsIgnoreCase(eventId);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return eventId.hashCode();
-//    }
     
     @Override
     public int compareTo(EQEvent o) {
@@ -113,8 +96,8 @@ e|Magnitude|MagAuthor|EventLocationName*/
     public String toString(){
         return eventId
                 +"|"+time.toString()
-                +"|"+Latitude
-                +"|"+Longitude
+                +"|"+latitude
+                +"|"+longitude
                 +"|"+depthKm
                 +"|"+author
                 +"|"+catalog
@@ -122,6 +105,6 @@ e|Magnitude|MagAuthor|EventLocationName*/
                 +"|"+contributorId
                 +"|"+magType
                 +"|"+magnitude
-                +"|"+eventLocationName+"\n";
+                +"|"+eventLocationName;
     }
 }

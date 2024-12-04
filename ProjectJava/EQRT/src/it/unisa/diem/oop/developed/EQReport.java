@@ -32,10 +32,12 @@ public class EQReport {
         eventi.sort(c); /* ordinamento secondo comparatore */
     }
     
-    /*#EventID|Time|Latitude|Longitude|Depth/Km|Author|Catalog|Contributor|ContributorID|MagTyp
-e|Magnitude|MagAuthor|EventLocationName*/
+    /* formato di ciascuna riga di un file di report:
+    #EventID|Time|Latitude|Longitude|Depth/Km|Author|Catalog|Contributor|ContributorID|MagType|
+    Magnitude|MagAuthor|EventLocationName
+    */
     public static void printToTextFile(EQReport eqr, String filename) {
-        System.out.println("*****Scrittura CSV iniziata*****");
+        System.out.println("***** Scrittura iniziata *****");
         
         try(PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(filename)))){
             for(EQEvent e : eqr.eventi){
@@ -58,33 +60,22 @@ e|Magnitude|MagAuthor|EventLocationName*/
                 pw.append(e.getMagAuthor()).append("|");
                 pw.append(e.getEventLocationName()).append("|").append("\n");
             }
-            System.out.println("*****Scrittura CSV completata*****");
+            System.out.println("***** Scrittura completata *****\n");
         }catch(IOException ex){
-            System.out.println("*****Scrittura CSV non completata*****");
+            System.out.println("***** Scrittura non completata *****\n");
         }
     }
     
     public static EQReport readFromTextFile(String filename){
-        System.out.println("*****Lettura CSV iniziata*****");
+        System.out.println("****** Lettura file con scan iniziata ******");
         EQReport reportLetto = new EQReport();
         
         try(Scanner scan = new Scanner(new BufferedReader(new FileReader(filename)))){
             scan.useDelimiter("[|\n]");
             scan.useLocale(Locale.US);
-            while(scan.hasNext()){
-                String eventId = scan.next();
-                
-                String time = scan.next();
-                String vettTime[] = time.split("[-T:.]");
-                int year = Integer.parseInt(vettTime[0]);
-                int month = Integer.parseInt(vettTime[1]);
-                int day = Integer.parseInt(vettTime[2]);
-                int h = Integer.parseInt(vettTime[3]);
-                int min = Integer.parseInt(vettTime[4]);
-                int sec = Integer.parseInt(vettTime[5]);
-                int nSec = Integer.parseInt(vettTime[6]);
-                LocalDateTime timeDate = LocalDateTime.of(year, month, day, h, min, sec, nSec);
-                
+            while(scan.hasNext()){                
+                String eventId = scan.next();                
+                LocalDateTime timeDate = LocalDateTime.parse(scan.next());
                 double lat = scan.nextDouble();
                 double lon = scan.nextDouble();
                 double depthKm = scan.nextDouble();
@@ -112,9 +103,58 @@ e|Magnitude|MagAuthor|EventLocationName*/
                         location);
                 reportLetto.addEvent(e);
             }
-            System.out.println("*****Lettura CSV completata*****");
+            System.out.println("****** Lettura file con scan completata ******\n");
         }catch(IOException ex){
-            System.out.println("*****Lettura CSV non completata*****");
+            System.out.println("****** Lettura file con scan non completata ******\n");
+        }
+        
+        return reportLetto;
+    }
+    
+    public static EQReport readFromTextFileNoScan(String filename) {
+        EQReport reportLetto = new EQReport();
+        System.out.println("****** Lettura file senza scan iniziata ******");
+        
+        try(BufferedReader br = new BufferedReader(new FileReader(filename))){
+            String line = br.readLine();
+            while(line != null){
+                String campi[] = line.split("[|]");
+                
+                String eventId = campi[0];
+                LocalDateTime time = LocalDateTime.parse(campi[1]);
+                double latitude = Double.parseDouble(campi[2]);
+                double longitude = Double.parseDouble(campi[3]);                
+                double depthKm = Double.parseDouble(campi[4]);
+                String author = campi[5];
+                String catalog = campi[6];
+                String contributor = campi[7];
+                String contributorId = campi[8];
+                String magType = campi[9];
+                double magnitude = Double.parseDouble(campi[10]);
+                String magAuthor = campi[11];
+                String eventLocationName = campi[12];
+                
+                EQEvent e = new EQEvent(eventId,
+                        time,
+                        latitude, 
+                        longitude,
+                        depthKm,
+                        author, 
+                        catalog, 
+                        contributor, 
+                        contributorId,
+                        magType, 
+                        magnitude, 
+                        magAuthor, 
+                        eventLocationName);
+                reportLetto.addEvent(e);
+                
+                line = br.readLine();
+            }
+            
+            System.out.println("****** Lettura file senza scan completata ******\n");
+        }catch(IOException ex){
+            System.out.println("****** Lettura file senza scan non completata ******\n");
         }
         
         return reportLetto;
@@ -125,7 +165,7 @@ e|Magnitude|MagAuthor|EventLocationName*/
         StringBuffer strb = new StringBuffer();
         
         for(EQEvent e : eventi){
-            strb.append(e);
+            strb.append(e).append("\n");
         }
         
         return strb.toString();

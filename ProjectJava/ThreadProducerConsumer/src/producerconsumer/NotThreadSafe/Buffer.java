@@ -1,4 +1,4 @@
-package producerconsumer.ThreadSafe2;
+package producerconsumer.NotThreadSafe;
 
 import java.util.LinkedList;
 import java.util.Queue;
