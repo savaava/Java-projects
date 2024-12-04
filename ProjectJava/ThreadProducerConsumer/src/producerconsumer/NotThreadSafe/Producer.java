@@ -16,14 +16,7 @@ public class Producer implements Runnable {
         Random p = new Random(2300);
         String element;
         
-        while(! Thread.currentThread().isInterrupted()){
-            try {
-                Thread.sleep(delay*1000);
-            } catch (InterruptedException ex) {
-                System.out.println(ex.getMessage()+"thread producer interrotto");
-                return;
-            }
-            
+        while(! Thread.currentThread().isInterrupted()){            
             element = "Info prodotto: "+p.nextInt(10);
             synchronized(buffer){
                 while(buffer.isFull()){
@@ -36,9 +29,16 @@ public class Producer implements Runnable {
                 }
                 
                 buffer.add(element);
+                System.out.println(Thread.currentThread().getName()+" ha aggiunto al buffer -> "+element);
                 buffer.notifyAll();
             }
-            System.out.println(Thread.currentThread().getName()+" ha aggiunto al buffer -> "+element);
+            
+            try {
+                Thread.sleep(delay*1000);
+            } catch (InterruptedException ex) {
+                System.out.println(ex.getMessage()+"thread producer interrotto");
+                return;
+            }
         }
     }
 }

@@ -13,14 +13,7 @@ public class Consumer implements Runnable {
     public void run(){
         String element;
         
-        while(! Thread.currentThread().isInterrupted()){
-            try {
-                Thread.sleep(delay*1000);                    
-            } catch (InterruptedException ex) {
-                System.out.println(ex.getMessage()+"thread consumer interrotto");
-                return;
-            }           
-            
+        while(! Thread.currentThread().isInterrupted()){           
             synchronized(buffer){
                 while(buffer.isEmpty()){
                     try {
@@ -32,9 +25,16 @@ public class Consumer implements Runnable {
                 }
 
                 element = buffer.remove();
+                System.out.println(Thread.currentThread().getName()+" ha letto dal buffer: "+element);
                 buffer.notifyAll();
             }
-            System.out.println(Thread.currentThread().getName()+" ha letto dal buffer: "+element);
+            
+            try {
+                Thread.sleep(delay*1000);                    
+            } catch (InterruptedException ex) {
+                System.out.println(ex.getMessage()+"thread consumer interrotto");
+                return;
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ public class Buffer<E> {
     }
     
     public boolean isFull(){
-        return buffer.size()==size;
+        return buffer.size()>=size;
     }
     
     public void add(E e){ 
