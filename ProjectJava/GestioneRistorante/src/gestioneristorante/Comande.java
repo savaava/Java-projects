@@ -29,14 +29,6 @@ public class Comande {
             }            
         }
     }
-
-    public String getFilename() {
-        return filename;
-    }
-    
-    public boolean isEmpty() {
-        return ordinazioni.isEmpty();
-    }
     
     public synchronized void aggiungiOrdinazione(Ordinazione ordinazione) {
         ordinazioni.add(ordinazione);
@@ -44,7 +36,7 @@ public class Comande {
     }
     
     public synchronized Ordinazione consegnaOrdinazione() {
-        while(isEmpty()){
+        while(ordinazioni.isEmpty()){
             try {
                 this.wait();
             } catch (InterruptedException ex) {
@@ -52,11 +44,11 @@ public class Comande {
             }
         }
         this.notifyAll();
-        return ordinazioni.pollFirst();
+        return ordinazioni.remove();
     }
     
     public synchronized void salvaOrdinazioni() {
-        while(isEmpty()){
+        while(ordinazioni.isEmpty()){
             try {
                 this.wait();
             } catch (InterruptedException ex) {

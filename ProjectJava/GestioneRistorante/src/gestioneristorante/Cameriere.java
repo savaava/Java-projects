@@ -10,25 +10,17 @@ public class Cameriere implements Runnable{
         this.nome = nome;
         this.comande = comande;
     }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public Comande getComande() {
-        return comande;
-    }
     
     @Override
     public void run(){
-        Random r1 = new Random(33999);
-        Random r2 = new Random(33999);
-        Random r3 = new Random(33999);
+        Random r1 = new Random(15000);
+        Random r2 = new Random(15000);
+        Random r3 = new Random(15000);
         
         while(! Thread.currentThread().isInterrupted()) {
-            int delay = r1.nextInt(6)+5;
-            int tavoloNum = r2.nextInt(5)+1;
-            int quantita = r3.nextInt(4)+1;
+            int tavoloNum = r1.nextInt(5)+1;
+            int quantita = r2.nextInt(4)+1;
+            int delay = r3.nextInt(6)+5;
                     
             try {
                 Thread.sleep(delay*1000);

@@ -11,7 +11,7 @@ public class Cuoco implements Runnable{
     
     @Override
     public void run(){
-        Random r = new Random(33999);
+        Random r = new Random(31);
         
         while(! Thread.currentThread().isInterrupted()){
             int delay = r.nextInt(6)+5;
