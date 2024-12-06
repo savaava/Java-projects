@@ -25,6 +25,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
@@ -113,6 +114,15 @@ public class MyStudentListViewController implements Initializable {
 //        new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
 //        new ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
 //        new ExtensionFilter("All Files", "*.*"));
+
+
+        nameClm.setCellFactory(TextFieldTableCell.forTableColumn());
+        /* però questo mi permetto solo di modificare i textfield
+        quindi per modificare effettivamente si deve usare una cattura di evento 
+        quindi da fxml scenebuilder mettere sulle colonne che voglio in code
+        oltre all'id anche i metodi che si invocano quando si sollevano quelle 3 
+        eccezioni: OnEditStart, OnEditCommit, OnEditCancel e chiammo ad esempio updateName
+        */
     }    
 
     @FXML
@@ -125,11 +135,19 @@ public class MyStudentListViewController implements Initializable {
     }
     
     @FXML
+    private void updateName(TableColumn.CellEditEvent<Student, String> event) {
+        Student s = studentTable.getSelectionModel().getSelectedItem();
+        s.setName(event.getNewValue());
+    }
+    
+    @FXML
     private void saveCSV() throws IOException {
         System.out.println("*****Scrittura CSV iniziata*****");
         
         Stage stage = MyStudentList.getStage();
         File fileSaved = fileChooserSave.showSaveDialog(stage);
+        /* se passiamo null allora la finestra è svincolata dalla scena principale,
+        potrei passare anche altri nodi del mio programma */
         if(fileSaved == null) return;
         
         try(PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileSaved)))){

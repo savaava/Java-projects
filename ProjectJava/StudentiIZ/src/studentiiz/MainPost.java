@@ -40,9 +40,6 @@ public class MainPost {
         deep copy -> ci copiamo tutti i campi e restituiamo l'oggetto
         */
         
-        /* 25_11
-        */
-        
         /* 27_11 thread
         i thread di 2 tipi:
         1) thread ausiliari subordinati -> se arrestiamo il thread principale si arrestano anche questi demon thread
@@ -98,7 +95,7 @@ public class MainPost {
         la condizione deve essere fatta in un ciclo perchè il thread ottiene il mutex perchè un altro thread ha
         invocato notifyAll ma deve verificare che può effettivamente continuare, e quindi deve ricontrollare 
         la condizione e se non è soddisfatta allora invoca di nuovo la wait e rilascia il mutex
-        */        
+        */
     }
 }
  

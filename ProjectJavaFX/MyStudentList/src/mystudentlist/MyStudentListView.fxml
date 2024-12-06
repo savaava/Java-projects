@@ -46,7 +46,7 @@
          <children>
             <TableView fx:id="studentTable" layoutX="135.0" layoutY="185.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
               <columns>
-                <TableColumn fx:id="nameClm" prefWidth="75.0" text="Nome" />
+                <TableColumn fx:id="nameClm" onEditCommit="#updateName" prefWidth="75.0" text="Nome" />
                 <TableColumn fx:id="surnameClm" prefWidth="75.0" text="Cognome" />
                   <TableColumn fx:id="codeClm" prefWidth="75.0" text="Matricola" />
               </columns>

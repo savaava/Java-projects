@@ -1,9 +1,9 @@
 package mystudentlist;
 
 public class Student {
-    private final String name;
-    private final String surname;
-    private final String code;
+    private String name;
+    private String surname;
+    private String code;
 
     public Student(String name, String surname, String code) {
         this.name = name;
@@ -22,6 +22,18 @@ public class Student {
     public String getCode() {
         return code;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }   
     
     @Override
     public String toString(){
