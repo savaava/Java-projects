@@ -120,8 +120,8 @@ public class MyStudentListViewController implements Initializable {
         /* però questo mi permetto solo di modificare i textfield
         quindi per modificare effettivamente si deve usare una cattura di evento 
         quindi da fxml scenebuilder mettere sulle colonne che voglio in code
-        oltre all'id anche i metodi che si invocano quando si sollevano quelle 3 
-        eccezioni: OnEditStart, OnEditCommit, OnEditCancel e chiammo ad esempio updateName
+        oltre all'id anche i metodi che si invocano quando avvengono queste 3 cose:
+        OnEditStart, OnEditCommit, OnEditCancel e chiammo ad esempio updateName
         */
     }    
 
