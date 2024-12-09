@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ultimalezione.FXMLController">
+   <children>
+      <Label fx:id="lbl" layoutX="279.0" layoutY="300.0" text="Label" />
+      <ProgressIndicator fx:id="progInd" layoutX="207.0" layoutY="170.0" progress="0.0" />
+      <Button layoutX="261.0" layoutY="246.0" mnemonicParsing="false" onAction="#onButtonClicked" text="Button" />
+   </children>
+</AnchorPane>
