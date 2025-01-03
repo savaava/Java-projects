@@ -1,13 +1,8 @@
-package gestioneristorante;
+package it.unisa.diem.oop.threadgestioneristorante;
 
 import java.util.LinkedList;
 
-/**
- *
- * @author leonardorundo
- */
-public class Menu {
-    
+public class Menu {    
     LinkedList<String> menu;
 
     public Menu() {
@@ -25,6 +20,5 @@ public class Menu {
     public String getPiatto() {
         int r = (int) Math.round((menu.size() - 1) * Math.random());
         return menu.get(r);
-    }
-    
+    }    
 }

@@ -1,4 +1,4 @@
-package contocorrenteiz;
+package contocorrenteizSafe;
 
 /* è la risora condivisa */
 public class ContoCorrente {
@@ -8,15 +8,15 @@ public class ContoCorrente {
         this.saldo = saldo;
     }
 
-    public double getSaldo() {
-        /* anche se è una fase di lettura è comunque importante sincronizzare */
+    public double getSaldo() {/* anche se è una fase di lettura è comunque importante sincronizzare */
         synchronized(this) {
             return saldo;
         }
     }
 
     public synchronized void versa(double importo) {
-        if(importo <= 0) throw new RuntimeException("Non è possibile versare l'importo: "+importo);
+        if(importo <= 0) 
+            throw new RuntimeException("Non è possibile versare l'importo: "+importo);
         saldo+=importo;
     }
     

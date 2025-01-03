@@ -1,9 +1,9 @@
-package contocorrenteiz2;
+package contocorrenteizNotSafe;
 
-public class ContoCorrente2 {
+public class ContoCorrente {
     private double saldo;
     
-    public ContoCorrente2(double saldo){
+    public ContoCorrente(double saldo){
         this.saldo = saldo;
     }
 

@@ -1,11 +1,11 @@
-package contocorrenteiz2;
+package contocorrenteizNotSafe;
 
 import java.util.Random;
 
-public class SpendiSpendi2 implements Runnable{
-    private final ContoCorrente2 c;
-
-    public SpendiSpendi2(ContoCorrente2 c) {
+public class GuadagnaGuadagna implements Runnable{
+    private final ContoCorrente c;    
+    
+    public GuadagnaGuadagna(ContoCorrente c){
         this.c = c;
     }
     
@@ -17,17 +17,17 @@ public class SpendiSpendi2 implements Runnable{
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException ex) {
-                return ;
+                return;
             }
             
             synchronized(c){
-                double prelievo = (n.nextInt(19)+1)*50;
-                c.preleva(prelievo);
+                double versamento = (n.nextInt(19)+1)*50;
+                c.versa(versamento);
                 System.out.println(Thread.currentThread().getName()
-                        +" ha prelevato: "+prelievo
-                        +" nuovo saldo: "+c.getSaldo());
+                        +" ha versato: "+versamento
+                        +", nuovo saldo: "+c.getSaldo());
             }
             
         }
-    }
+    }    
 }

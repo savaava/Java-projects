@@ -23,7 +23,7 @@ public class Producer implements Runnable {
                     try {
                         buffer.wait();
                     } catch (InterruptedException ex) {
-                        System.out.println(ex.getMessage()+"thread producer interrotto");
+                        System.out.println(ex.getMessage()+" thread producer interrotto");
                         return;
                     }
                 }
@@ -36,7 +36,7 @@ public class Producer implements Runnable {
             try {
                 Thread.sleep(delay*1000);
             } catch (InterruptedException ex) {
-                System.out.println(ex.getMessage()+"thread producer interrotto");
+                System.out.println(ex.getMessage()+" thread producer interrotto");
                 return;
             }
         }
