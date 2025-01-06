@@ -1,0 +1,32 @@
+@startuml
+
+class Evento{
+    - ?? data
+    - ?? descrizione
+
+    + ?? getData()
+    + ?? getDescrizione()
+    + String toString()
+}
+
+class Agenda{
+    - ?? proprietario
+    - ?? agenda
+
+    + ?? getProprietario()
+    + ?? aggiungiEvento()
+    + ?? rimuoviEventi()
+    + ?? getEventi()
+    + ?? getNumEventi()
+
+    + void saveOBJ(String filename)
+    + {static} void readOBJ(String filename)
+    + void saveCSV(String filename)
+    + {static} void readCSV(String filename)
+
+    + String toString()
+}
+
+Agenda "1" o-- "0..*" Evento
+
+@enduml
