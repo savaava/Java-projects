@@ -38,7 +38,6 @@ public abstract class Dispositivo {
         if(!(obj instanceof Dispositivo)) /* proprietà asimettrica */
             return false;
         
-        /* E' possibile fare il DownCast */
         Dispositivo objDispositivo = (Dispositivo)obj;
         return objDispositivo.id==this.id;
     }

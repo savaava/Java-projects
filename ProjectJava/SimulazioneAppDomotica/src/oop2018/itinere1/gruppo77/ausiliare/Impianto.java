@@ -2,34 +2,23 @@ package oop2018.itinere1.gruppo77.ausiliare;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.Map;
+import java.util.HashMap;
 import oop2018.itinere1.gruppo77.dispositivi.Dispositivo;
 
 public class Impianto {
     private final String nome;
     private final List<Regola> regole;
-    private final Set<Dispositivo> dispositivi;
+    private final Map<Integer,Dispositivo> dispositivi;
     
     public Impianto(String nome){
         this.nome=nome;
         regole = new ArrayList<>();
-        dispositivi = new HashSet<>();
+        dispositivi = new HashMap<>();
     }
     
-    public Dispositivo add(Dispositivo d){        
-        if(! dispositivi.contains(d)){
-            dispositivi.add(d);
-            return null;
-        }
-        
-        Dispositivo dSostituito = null;
-        for(Dispositivo di : dispositivi){
-            if(di.equals(d))
-                dSostituito = di;
-        }
-        dispositivi.add(d);
-        return dSostituito;
+    public Dispositivo add(Dispositivo d){
+        return dispositivi.put(d.getId(),d);
     }
     
     public void add(Regola r){
@@ -38,17 +27,11 @@ public class Impianto {
     }
     
     public Dispositivo getDispositivo(int id){
-        for(Dispositivo di : dispositivi){
-            if(di.getId()==id)
-                return di;
-        }
-        return null;
+        return dispositivi.get(id);
     }
     
     public void applicaRegole(){
-        for(Regola ri : this.regole){
-            ri.applica();
-        }
+        regole.forEach(ri -> ri.applica());
     }
     
     
@@ -58,15 +41,13 @@ public class Impianto {
         strb.append("\nNome: ").append(nome).append("\n\n");
         
         strb.append("---- Elenco dispositivi ----\n");
-        for(Dispositivo di : dispositivi){
-            strb.append(di).append("\n");
-        }
+        dispositivi.values().forEach(di -> strb.append(di).append("\n"));
         
         strb.append("\n\n---- Elenco regole ----\n");
         int i=0;
         for(Regola ri : this.regole){
             i++;
-            strb.append(i+" ").append(ri).append("\n");
+            strb.append(i).append(" ").append(ri).append("\n");
         }
         
         return strb.toString();

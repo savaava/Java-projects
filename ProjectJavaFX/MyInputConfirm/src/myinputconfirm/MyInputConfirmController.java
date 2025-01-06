@@ -2,38 +2,20 @@ package myinputconfirm;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
-import javafx.beans.value.ObservableBooleanValue;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 
 public class MyInputConfirmController {
-    private final MyInputConfirmView view;
+    MyInputConfirmView view;
     
     public MyInputConfirmController(MyInputConfirmView view){
         this.view = view;
-        initController();
+        init();
     }
     
-    private void initController(){
-        BooleanBinding op1 = view.tfd1.textProperty().isEmpty();
-        BooleanBinding op2 = view.tfd1.textProperty().isNotEqualTo(view.tfd2.textProperty());
-        //BooleanBinding observ = Bindings.or(op1, op2);
-        BooleanBinding observ = op1.or(op2);
-        view.btn.disableProperty().bind(observ);
+    private void init(){
+        view.btn.setOnAction(e -> System.out.println("btn clicked"));
         
-//        view.btn.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                buttonAction();
-//            }
-//        });
-        
-        view.btn.setOnAction((ActionEvent event) -> {
-            buttonAction();
-        });
-    }
-    
-    private void buttonAction(){
-        System.out.println("E' stato premuto il button!");
+        BooleanBinding cond1 = view.tfd2.textProperty().isEmpty();
+        BooleanBinding cond2 = view.tfd1.textProperty().isNotEqualTo(view.tfd2.textProperty());
+        view.btn.disableProperty().bind(Bindings.or(cond1,cond2));
     }
 }

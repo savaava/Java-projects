@@ -1,8 +1,8 @@
 package mytestiz;
 
+import java.util.Arrays;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -34,17 +34,13 @@ public class MyTestIZ extends Application {
 //            }
 //        });
 
-        /* lambda expression per sintetizzare ancora di più mettendo solo quello che mi serve effettivamente:
-        mi serve solo il corpo di handle e ActionEvent event. Se ci sono più metodi non possiamo fare lamba
-        1 unico metodo (solo per le interfacce funzionali con un unico metodo) -> usa lambda e 
-        accorpa solo la sintassi utile    si potrebbe usare addirittura solo (e -> {...}); */
-        btn.setOnAction((ActionEvent event) -> {
-            /* possiamo accedere solo in lettura a lbl */
-            lbl.setText(tfd.getText());
-            
-            /* la handle ha come parametro l'evento */
-            System.out.println("evento: "+event);
-        });
+//        btn.setOnAction((ActionEvent event) -> {
+//            /* possiamo accedere solo in lettura a lbl */
+//            lbl.setText(tfd.getText());
+//            
+//            /* la handle ha come parametro l'evento */
+//            System.out.println("evento: "+event);
+//        });
         
         lbl.textProperty().bind(tfd.textProperty());
         
@@ -59,7 +55,7 @@ public class MyTestIZ extends Application {
         
         /* root è il contenitore -> finestra 300x250 */
         Scene scene = new Scene(root, 300, 250);
-        primaryStage.setTitle("MyFirstApplication");
+        primaryStage.setTitle("My Application");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

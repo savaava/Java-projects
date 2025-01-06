@@ -5,7 +5,6 @@ import javafx.beans.binding.NumberBinding;
 import javafx.beans.binding.StringBinding;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.util.StringConverter;
 import javafx.util.converter.DoubleStringConverter;
 

@@ -4,7 +4,8 @@ public class LuceRegolabile extends AttuatoreRegolabile{
     public LuceRegolabile(int id, double livelloMin, double livelloMax, double livello) throws LivelloNonValidoException{
         super(id, livelloMin, livelloMax, livello);
         
-        if(livello<livelloMin || livello>livelloMax) throw new LivelloNonValidoException("livelli non validi !!");
+        if(livello<livelloMin || livello>livelloMax)
+            throw new LivelloNonValidoException("livelli non validi !!");
     }
     
     @Override
