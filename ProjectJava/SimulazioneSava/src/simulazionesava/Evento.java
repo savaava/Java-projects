@@ -18,6 +18,15 @@ public class Evento implements java.io.Serializable {
         return descrizione;
     }
     
+    @Override
+    public boolean equals(Object obj){
+        if(obj == null) return false;
+        if(obj == this) return true;
+        if(obj.getClass() != this.getClass()) return false;
+        
+        Evento objE = (Evento)obj;
+        return objE.data.equals(data);
+    }
     
     @Override
     public String toString(){
