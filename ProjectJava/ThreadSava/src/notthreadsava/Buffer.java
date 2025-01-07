@@ -1,5 +1,6 @@
 package notthreadsava;
 
+import ausiliarie.Evento;
 import java.util.List;
 import java.util.ArrayList;
 

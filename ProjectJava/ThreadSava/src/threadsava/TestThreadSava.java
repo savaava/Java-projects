@@ -1,4 +1,6 @@
-package notthreadsava;
+package threadsava;
+
+import ausiliarie.Evento;
 
 public class TestThreadSava {
     public static void main(String[] args) {
@@ -12,8 +14,8 @@ public class TestThreadSava {
         p.start();
         c.start();
         
-        try{Thread.sleep(1000*30);
-        }catch(InterruptedException ex){}
+        try{Thread.sleep(1000*30);}
+        catch(InterruptedException ex){}
         
         p.interrupt();
         c.interrupt();

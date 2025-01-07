@@ -1,5 +1,7 @@
 package notthreadsava;
 
+import ausiliarie.Evento;
+
 public class Consumer implements Runnable{
     private final Buffer buffer;
    

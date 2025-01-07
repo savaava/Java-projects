@@ -12,8 +12,8 @@ public class TestThreadSava {
         p.start();
         c.start();
         
-        try{Thread.sleep(1000*30);
-        }catch(InterruptedException ex){}
+        try{Thread.sleep(1000*30);}
+        catch(InterruptedException ex){}
         
         p.interrupt();
         c.interrupt();

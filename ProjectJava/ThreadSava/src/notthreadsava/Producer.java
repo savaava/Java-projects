@@ -1,5 +1,7 @@
 package notthreadsava;
 
+import ausiliarie.Evento;
+
 public class Producer implements Runnable{
     private final Buffer buffer;
    
