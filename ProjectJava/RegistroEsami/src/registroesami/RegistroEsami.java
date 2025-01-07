@@ -23,7 +23,10 @@ public class RegistroEsami extends TreeMap<String, Libretto>
     @Override
     public String toString(){
         StringBuffer strb = new StringBuffer("RegistroEsami\n");
-        values().forEach(libretto -> strb.append(libretto).append("\n"));
+        values().forEach(libretto -> {
+            
+            strb.append(libretto).append("\n");
+                });
         return strb.toString();
     }
 }

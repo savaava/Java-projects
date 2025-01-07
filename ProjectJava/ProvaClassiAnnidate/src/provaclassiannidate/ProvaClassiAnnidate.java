@@ -17,5 +17,9 @@ public class ProvaClassiAnnidate {
         System.out.println();
         
         new OuterClass().m2();
+        
+        System.out.println();
+        
+        new OuterClass().m3();
     }
 }

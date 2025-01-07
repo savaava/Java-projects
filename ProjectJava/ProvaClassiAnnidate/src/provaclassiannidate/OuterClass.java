@@ -30,7 +30,7 @@ public class OuterClass {
         class LocalClass {
             String aa = "attributo di LocalClass";
             public void m(){
-                System.out.println(aa);
+                System.out.println(this.aa);
                 System.out.println(a);
                 System.out.println(OuterClass.this.a);
                 aa+=" modifica";
@@ -44,15 +44,34 @@ public class OuterClass {
     public void m2(){
         String a = "attributo di m2() di OuterClass";
         Runnable t = new Runnable(){
+            String aa = "attributo di classe anonima";
             @Override
             public void run(){
                 System.out.println(a);
-                System.out.println("metodo run di Runnable t");
+                System.out.println(this.aa);
                 System.out.println(OuterClass.this.a);
 //                a+=" modifica";
             }
         };
         
         t.run();
+    }
+    
+    public void m3(){
+        String a = "attributo di m3() di OuterClass";
+        
+        Runnable t0 = () -> System.out.println("ciao");
+        
+        new Thread(() -> {
+            String aa = "attributo della funzione lambda";
+            System.out.println(this.a);
+            System.out.println(aa);
+        }).start();
+        
+        Thread t = new Thread(() -> {
+            String aa = "attributo della funzione lambda";
+            System.out.println(this.a);
+            System.out.println(aa);
+        });
     }
 }

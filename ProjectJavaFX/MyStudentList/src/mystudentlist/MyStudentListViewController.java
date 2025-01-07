@@ -13,7 +13,6 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,41 +30,18 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 public class MyStudentListViewController implements Initializable {
-    
-    /* queste annotazioni FXML viene gestita da un cpu delle annotazioni che 
-    la label era stata già istanziata nella vista dentro a fxml e a noi ci serve solo il riferimento
-    un attributo contrassegnato con fxml realizza il legame tra l'oggetto della view e il controller
-    se non c'è fxml allora nullpointer -> non c'è accoppiamento 
-    oltre alla label ci dovrebbe essere anche il Button perchè abbiamo messo l'id 
-    con makeController -> esce button perchè analizza il file fxml e genera il controller relativo 
-    al file fxml  */
     @FXML
-    private TextField nameField;
+    private TextField nameField, surnameField, codeField;
     @FXML
-    private TextField surnameField;
+    private Button addButton, delButton;
     @FXML
-    private TextField codeField;
+    private TableView<Student> studentTable; /* la table view ha bisogno di una lista, solo una lista osservabile */
     @FXML
-    private Button addButton;
-    @FXML
-    private Button delButton;
-    
-    /* la table view ha bisogno di una lista, solo una lista osservabile
-    lista osservabile di studenti
-    */
-    @FXML
-    private TableView<Student> studentTable;
-    @FXML
-    private TableColumn<Student, String> nameClm;
-    @FXML
-    private TableColumn<Student, String> surnameClm;
-    @FXML
-    private TableColumn<Student, String> codeClm;
+    private TableColumn<Student, String> nameClm, surnameClm, codeClm;
     
     private ObservableList<Student> students;
     
-    private FileChooser fileChooserSave;
-    private FileChooser fileChooserRead;
+    private FileChooser fileChooserSave, fileChooserRead;
     
     /* controller implementa inizializzabile -> non gestendo un controller con un costruttore
     avviando l'applicazione potrei avere la necessità di istanziare cose quindi le cose che devo
@@ -84,13 +60,11 @@ public class MyStudentListViewController implements Initializable {
             /* lui però vuole una stringa osservabile quindi una string property */
             return new SimpleStringProperty(s.getValue().getName());
         });
-        /* (espressione lambda o la classe anonima) il metodo call restituisce  */
-        //CallBack
         
         /* la seconda colonna usiamo la classe aiutante: 
         vede all'interno della classe student  */
         surnameClm.setCellValueFactory(new PropertyValueFactory<Student, String>("surname"));
-        codeClm.setCellValueFactory(new PropertyValueFactory<Student, String>("code"));
+        codeClm.setCellValueFactory(new PropertyValueFactory<>("code"));
         /* qui è importante la convenzione perchè se non la chiamavamo getCognome, get... allora
         non funzionava */
         
