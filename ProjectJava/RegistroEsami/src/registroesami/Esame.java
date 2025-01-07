@@ -1,6 +1,7 @@
 package registroesami;
 
 import java.time.LocalDate;
+import java.time.DateTimeException;
 
 public class Esame implements java.io.Serializable {
     private final String nome;
@@ -8,11 +9,7 @@ public class Esame implements java.io.Serializable {
     private final int voto;
     private final String codice;
     
-    private Esame(String nome, LocalDate data, int voto, String codice){
-        if(voto<18 || voto>31) throw new VotoNonValidoException("voto fornito non compreso in [18,31]");
-        if(codice == null) throw new CodiceNonValidoException("codice fornito uguale a null");
-        if(data.isAfter(LocalDate.now())) throw new DataNonValidaException("data fornita non valida");
-        
+    private Esame(String nome, LocalDate data, int voto, String codice){        
         this.nome = nome;
         this.data = data;
         this.voto = voto;
@@ -36,7 +33,7 @@ public class Esame implements java.io.Serializable {
     
     @Override
     public int hashCode(){
-        return codice.hashCode();
+        return codice.toLowerCase().hashCode();
     }
     
     @Override
@@ -58,6 +55,11 @@ public class Esame implements java.io.Serializable {
     }
     
     public static Esame crea(String nome, int giorno, int mese, int anno, int voto, String codice){
+        try{LocalDate.of(anno, mese, giorno);}
+        catch(DateTimeException ex){throw new DataNonValidaException("data fornita non valida");}
+        if(voto<18 || voto>31) throw new VotoNonValidoException("voto fornito non compreso in [18,31]");
+        if(codice == null) throw new CodiceNonValidoException("codice fornito uguale a null");
+        
         return new Esame(nome, LocalDate.of(anno, mese, giorno), voto, codice);
     }
 }

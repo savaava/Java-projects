@@ -18,6 +18,7 @@ public class SalvataggioAutomatico implements Runnable {
                     System.out.println("Thread "+Thread.currentThread().getName()+" interrotto");
                     return ;
                 }
+                
                 if(RegistroEsamiUtils.salvaSuFileBinario(filename, registro))
                     System.out.println("Salvataggio riuscito");
                 else

@@ -23,7 +23,7 @@ public class Studente implements java.io.Serializable, Comparable<Studente> {
     
     @Override
     public int hashCode(){
-        return matricola.hashCode();
+        return matricola.toLowerCase().hashCode();
     }
     
     @Override

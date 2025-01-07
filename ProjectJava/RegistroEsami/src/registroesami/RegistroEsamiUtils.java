@@ -10,7 +10,6 @@ public class RegistroEsamiUtils {
             out = (RegistroEsami)ois.readObject();
         }catch(IOException | ClassNotFoundException ex){
             System.out.println("Eccezione in caricaDaFileBinario: \n");
-            ex.printStackTrace();
             return null;
         }        
         return out;
@@ -21,7 +20,6 @@ public class RegistroEsamiUtils {
             oos.writeObject(r);
         }catch(IOException ex){
             System.out.println("Eccezione in salvaSuFileBinario: \n");
-            ex.printStackTrace();
             return false;
         }
         return true;
