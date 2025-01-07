@@ -1,7 +1,5 @@
 package threadsava;
 
-import ausiliarie.Evento;
-
 public class TestThreadSava {
     public static void main(String[] args) {
         Buffer b = new Buffer();

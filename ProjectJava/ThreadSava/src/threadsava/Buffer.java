@@ -12,6 +12,13 @@ public class Buffer {
     }
     
     public synchronized int numEventi(){
+        while(buffer.isEmpty()){
+            try{this.wait();}
+            catch(InterruptedException ex){
+                System.out.println("Thread "+Thread.currentThread().getName()+" interrotto");
+                return -1;
+            }
+        }
         this.notifyAll();
         return buffer.size();
     }
@@ -29,7 +36,6 @@ public class Buffer {
     }
     public synchronized Evento rimuoviEvento(int index){
         while(buffer.isEmpty()){
-            System.out.println("ECCOMIIII");
             try{this.wait();}
             catch(InterruptedException ex){
                 System.out.println("Thread "+Thread.currentThread().getName()+" interrotto");
@@ -37,7 +43,6 @@ public class Buffer {
             }
         }
         this.notifyAll();
-        System.out.println("ECCOMIIII");
         return buffer.remove(index);
     }
     
