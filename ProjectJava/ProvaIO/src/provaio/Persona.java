@@ -5,12 +5,14 @@ public class Persona implements Comparable<Persona>, java.io.Serializable {
     private final String cognome;
     private final String codiceFiscale;
     private final int eta;
+    private final float altezza;
     
-    public Persona(String nome, String cognome, String codiceFiscale, int eta){
+    public Persona(String nome, String cognome, String codiceFiscale, int eta, float altezza){
         this.nome = nome;
         this.cognome = cognome;
         this.codiceFiscale = codiceFiscale;
         this.eta = eta;
+        this.altezza = altezza;
     }   
     
     public final String getNome(){
@@ -25,10 +27,13 @@ public class Persona implements Comparable<Persona>, java.io.Serializable {
     public int getEta(){
         return eta;
     }
+    public float getAltezza(){
+        return altezza;
+    }
     
     @Override
     public int hashCode(){
-        return this.codiceFiscale.hashCode();       
+        return codiceFiscale.toLowerCase().hashCode();       
     }
     
     @Override
@@ -38,17 +43,17 @@ public class Persona implements Comparable<Persona>, java.io.Serializable {
         if(this.getClass() != obj.getClass()) return false;
         
         Persona p = (Persona)obj;
-        return p.codiceFiscale.equals(this.codiceFiscale);
+        return p.codiceFiscale.equalsIgnoreCase(codiceFiscale);
     }
     
     @Override
     public int compareTo(Persona o){
-        return this.codiceFiscale.compareTo(o.codiceFiscale);
+        return codiceFiscale.compareToIgnoreCase(o.codiceFiscale);
     }
     
     @Override
     public String toString(){
-        return "("+this.nome+"-"+this.cognome+"-"+this.codiceFiscale+"-"+eta+")";
+        return "("+this.nome+"-"+this.cognome+"-"+this.codiceFiscale+"-"+eta+"-"+altezza+"m)\n";
     }
 }
 
