@@ -52,11 +52,11 @@ public class TestAllDecorators {
         
         
         /* FORMATO:
-        - nome (UTF)
-        - cognome (UTF)
-        - cf (UTF)
-        - età (Int)
-        - altezza (Float)
+        nome (UTF)
+        cognome (UTF)
+        cf (UTF)
+        età (Int)
+        altezza (Float)
         */
         try(DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(filename+".bin")))){
             for(Persona pi : persone.values()){
@@ -96,9 +96,9 @@ public class TestAllDecorators {
         
         
         /* FORMATO:
-        NOME|COGNOME|CF|ETA|ALTEZZA
+        NOME|COGNOME|CF|ETA|ALTEZZA \n
         nome|cognome|cf|eta|altezza \n
-        nome|cognome|cf|eta|altezza
+        nome|cognome|cf|eta|altezza \n
         ...
         */
         try(PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(filename+".csv")))){
